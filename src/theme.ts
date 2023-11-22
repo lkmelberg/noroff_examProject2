@@ -3,6 +3,11 @@ import { extendTheme } from "@chakra-ui/react";
 
 // Version 1: Using objects
 export const theme = extendTheme({
+  fonts: {
+    heading: `'Playfair Display Variable', serif`,
+    // H2: `'Lato', sans-serif`,
+    body: `'Open Sans Variable', sans-serif`,
+  },
   colors: {
     brand: {
       lightBlue: "#89B3D9",
