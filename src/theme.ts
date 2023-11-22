@@ -3,6 +3,15 @@ import { extendTheme } from "@chakra-ui/react";
 
 // Version 1: Using objects
 export const theme = extendTheme({
+  colors: {
+    brand: {
+      lightBlue: "#89B3D9",
+      lightBrick: "#D99962",
+      brick: "#A64521",
+      darkBrick: "#59220E",
+      beige: "#F2E3D5",
+    },
+  },
   styles: {
     global: {
       // styles for the `body`
