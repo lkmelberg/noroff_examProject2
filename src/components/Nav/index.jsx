@@ -1,17 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Tabs, TabList, Tab } from "@chakra-ui/react";
+import { Tabs, TabList } from "@chakra-ui/react";
+import { CustomerNav } from "./CustomerNav";
+// import { NotLoggedInNav } from "./NotLoggedInNav";
+// import { ManagerNav } from "./ManagerNav";
 
 export function Nav() {
   return (
     <Tabs align="center" isFitted width="90%">
       <TabList borderColor="brand.beige">
-        <Tab color="brand.lightBrick">
-          <Link to="/">Home</Link>
-        </Tab>
-        <Tab>
-          <Link to="/ProfilePage">Profile</Link>
-        </Tab>
+        {/* <NotLoggedInNav></NotLoggedInNav> */}
+        <CustomerNav></CustomerNav>
+        {/* <ManagerNav></ManagerNav> */}
       </TabList>
     </Tabs>
   );
