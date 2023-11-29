@@ -8,15 +8,6 @@ export function VenueListRender() {
   const { data, isLoading, isError } = SetFetchedData();
   const venues = data.venues;
 
-  // pagination
-  const {
-    displayedItems: paginatedVenues,
-    currentPage,
-    totalPages,
-    handleNextPage,
-    handlePreviousPage,
-  } = usePagination(venues);
-
   // search
   const [searchQuery, setSearchQuery] = useState("");
   const [searchedVenues, setSearchedVenues] = useState([]);
@@ -28,7 +19,6 @@ export function VenueListRender() {
     }
   }, [venues, searchQuery]);
 
-  // Apply pagination to the searched venues
   const {
     displayedItems: paginatedSearchedVenues,
     currentPage: searchedCurrentPage,
@@ -39,7 +29,7 @@ export function VenueListRender() {
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
-    // Reset pagination to the first page when the search query changes
+
     handlePreviousSearchedPage();
   };
 
