@@ -1,77 +1,67 @@
 import React, { useState, useEffect } from "react";
-import { SetFetchedData } from "../../utils/api/SetFetchedData";
-import { usePagination } from "../../utils/UsePagination";
-import { Search } from "../../utils/Search";
+import { Input, Heading } from "@chakra-ui/react";
 import VenueCard from "../VenueCard";
 
-export function VenueListRender() {
-  const { data, isLoading, isError } = SetFetchedData();
-  const venues = data.venues;
-
-  // search
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchedVenues, setSearchedVenues] = useState([]);
+export const VenueListRender = ({ isLoading, isError, venues }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [pageNumber, setPageNumber] = useState(0);
+  const [pageSize, setPageSize] = useState(5);
+  const [filteredVenues, setFilteredVenues] = useState([]);
+  const [sortedVenues, setSortedVenues] = useState([]);
 
   useEffect(() => {
-    if (venues && venues.length > 0) {
-      const filteredVenues = Search(venues, searchQuery);
-      setSearchedVenues(filteredVenues);
-    }
-  }, [venues, searchQuery]);
+    setFilteredVenues(
+      venues
+        .filter((venue) =>
+          venue.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        .sort((a, b) => new Date(b.created) - new Date(a.created))
+    );
+  }, [venues, searchTerm]);
 
-  const {
-    displayedItems: paginatedSearchedVenues,
-    currentPage: searchedCurrentPage,
-    totalPages: searchedTotalPages,
-    handleNextPage: handleNextSearchedPage,
-    handlePreviousPage: handlePreviousSearchedPage,
-  } = usePagination(searchedVenues);
+  useEffect(() => {
+    setSortedVenues(
+      filteredVenues.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize)
+    );
+  }, [filteredVenues, pageNumber, pageSize]);
 
   const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
+    setSearchTerm(e.target.value);
+  };
 
-    handlePreviousSearchedPage();
+  const handleNextPage = () => {
+    setPageNumber((prevPageNumber) => prevPageNumber + 1);
+  };
+
+  const handlePreviousPage = () => {
+    setPageNumber((prevPageNumber) => prevPageNumber - 1);
   };
 
   return (
     <div>
-      <h1>Data Fetching Example</h1>
+      <Heading color="brand.beige">Venues</Heading>
 
-      <div>
-        <input
-          type="text"
-          placeholder="Search venues..."
-          value={searchQuery}
-          onChange={handleSearch}
-        />
-      </div>
+      <Input
+        type="text"
+        placeholder="Search venues..."
+        onChange={handleSearch}
+      />
 
       {isLoading ? (
         <p>Loading...</p>
       ) : isError ? (
         <p>Error fetching data</p>
-      ) : searchedVenues.length > 0 ? (
+      ) : sortedVenues.length > 0 ? (
         <div>
-          <h2>Venues:</h2>
+          <h2 color="brand.brick">Venues:</h2>
           <ul>
-            {paginatedSearchedVenues.map((venue) => (
+            {sortedVenues.map((venue) => (
               <VenueCard key={venue.id} venue={venue} />
             ))}
           </ul>
           <div>
-            <button
-              onClick={handlePreviousSearchedPage}
-              disabled={searchedCurrentPage === 1}>
-              Previous
-            </button>
-            <button
-              onClick={handleNextSearchedPage}
-              disabled={searchedCurrentPage === searchedTotalPages}>
-              Next
-            </button>
-            <p>
-              Page: {searchedCurrentPage} of {searchedTotalPages}
-            </p>
+            <button onClick={handlePreviousPage}>Previous</button>
+            <button onClick={handleNextPage}>Next</button>
           </div>
         </div>
       ) : (
@@ -79,4 +69,4 @@ export function VenueListRender() {
       )}
     </div>
   );
-}
+};
