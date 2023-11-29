@@ -6,7 +6,7 @@ import logoDark from "../../assets/logo/logoDark.svg";
 
 export function Header() {
   return (
-    <Flex direction="column" alignItems="center">
+    <Flex as="header" direction="column" alignItems="center">
       <Link to="/">
         <Image
           ali

@@ -15,6 +15,7 @@ export const theme = extendTheme({
       brick: "#A64521",
       darkBrick: "#59220E",
       beige: "#F2E3D5",
+      lightBeige: "#FFEFE0",
     },
   },
   styles: {
@@ -23,9 +24,19 @@ export const theme = extendTheme({
       body: {
         bg: "brand.darkBrick",
         color: "brand.beige",
-        margin: 1,
+        margin: 0,
         minW: "320px",
         minH: "100vh",
+      },
+      header: {
+        margin: 1,
+      },
+      footer: {
+        bg: "brand.lightBeige",
+        color: "brand.darkBrick",
+        position: "fixed",
+
+        bottom: "0",
       },
       // styles for the `a`
       // a: {
