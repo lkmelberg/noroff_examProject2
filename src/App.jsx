@@ -1,33 +1,21 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { Heading, Text } from "@chakra-ui/react";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { Home } from "./pages/Home";
+import { Error } from "./pages/Error";
+import { ProfilePage } from "./pages/profile/ProfilePage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <Heading>Vite + React</Heading>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <Text>Edit and save to test HMR</Text>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="ProfilePage" element={<ProfilePage />} />
+          <Route path="*" element={<Error />} />
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
