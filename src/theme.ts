@@ -21,19 +21,19 @@ export const theme = extendTheme({
     global: {
       // styles for the `body`
       body: {
-        bg: "gray.400",
-        color: "white",
-        margin: 0,
+        bg: "brand.darkBrick",
+        color: "brand.beige",
+        margin: 1,
         minW: "320px",
         minH: "100vh",
       },
       // styles for the `a`
-      a: {
-        color: "teal.500",
-        _hover: {
-          textDecoration: "underline",
-        },
-      },
+      // a: {
+      //   color: "teal.500",
+      //   _hover: {
+      //     textDecoration: "underline",
+      //   },
+      // },
     },
   },
 });
