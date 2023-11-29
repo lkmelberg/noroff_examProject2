@@ -34,9 +34,7 @@ export const theme = extendTheme({
       footer: {
         bg: "brand.lightBeige",
         color: "brand.darkBrick",
-        position: "fixed",
-
-        bottom: "0",
+        width: "100%",
       },
       // styles for the `a`
       // a: {
