@@ -5,23 +5,24 @@ import React from "react";
 import {
   Box,
   Center,
-  useColorModeValue,
   Heading,
   Text,
   Stack,
   Image,
+  Button,
+  Flex,
 } from "@chakra-ui/react";
 
 function VenueCard({ venue }) {
   return (
-    <li key={venue.id}>
-      <Center py={12}>
+    <Flex key={venue.id}>
+      <Center py={12} paddingBottom={4}>
         <Box
           role={"group"}
-          p={6}
-          maxW={"330px"}
+          p={4}
+          maxW={"18rem"}
           w={"full"}
-          bg={useColorModeValue("white", "gray.800")}
+          bg={"brand.beige"}
           boxShadow={"2xl"}
           rounded={"lg"}
           pos={"relative"}
@@ -54,29 +55,33 @@ function VenueCard({ venue }) {
               width={282}
               objectFit={"cover"}
               src={venue.media[0]}
-              alt="#"
+              alt={venue.name}
             />
           </Box>
-          <Stack pt={10} align={"center"}>
+          <Stack pt={5} align={"center"}>
             <Text
-              color={"gray.500"}
+              color={"brand.darkBrick"}
               fontSize={"sm"}
               textTransform={"uppercase"}>
               Guest Spaces: {venue.maxGuests}
             </Text>
-            <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
+            <Heading
+              color={"brand.darkBrick"}
+              fontSize={"2xl"}
+              fontWeight={500}>
               {venue.name}
             </Heading>
             <Stack direction={"row"} align={"center"}>
-              <Text fontWeight={800} fontSize={"xl"}>
+              <Text color={"brand.brick"} fontWeight={800} fontSize={"xl"}>
                 ${venue.price}
               </Text>
-              <Text color={"gray.600"}>Per Night</Text>
+              <Text color={"brand.brick"}>Per Night</Text>
             </Stack>
+            <Button variant="button">See more</Button>
           </Stack>
         </Box>
       </Center>
-    </li>
+    </Flex>
   );
 }
 

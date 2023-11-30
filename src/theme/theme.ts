@@ -20,6 +20,15 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
+      button: {
+        bg: "brand.darkBrick",
+        color: "brand.beige",
+        buttonSecondary: {
+          bg: "brand.beige",
+          color: "brand.darkBrick",
+        },
+      },
+
       // styles for the `body`
       body: {
         bg: "brand.darkBrick",
@@ -34,7 +43,7 @@ export const theme = extendTheme({
       footer: {
         bg: "brand.lightBeige",
         color: "brand.darkBrick",
-        width: "100%",
+        margin: "0%",
       },
       // styles for the `a`
       // a: {
