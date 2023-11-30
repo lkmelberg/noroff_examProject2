@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Input, Heading } from "@chakra-ui/react";
+import { Input, Heading, Flex, Button, Text } from "@chakra-ui/react";
 import VenueCard from "../VenueCard";
 
 export const VenueListRender = ({ isLoading, isError, venues }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
-  const [pageSize, setPageSize] = useState(5);
+  const [pageSize, setPageSize] = useState(8);
   const [filteredVenues, setFilteredVenues] = useState([]);
   const [sortedVenues, setSortedVenues] = useState([]);
 
@@ -39,30 +39,51 @@ export const VenueListRender = ({ isLoading, isError, venues }) => {
 
   return (
     <div>
-      <Heading color="brand.beige">Venues</Heading>
+      <Flex direction={"column"} marginTop={"1rem"} alignItems={"center"}>
+        <Heading pb={3} color="brand.beige">
+          Venues
+        </Heading>
 
-      <Input
-        type="text"
-        placeholder="Search venues..."
-        onChange={handleSearch}
-      />
-
+        <Input
+          bg={"brand.beige"}
+          borderColor="brand.brand.beige"
+          focusBorderColor="brand.brand.beige"
+          color={"brand.beige"}
+          size={"md"}
+          _placeholder={{ color: "brand.brick" }}
+          maxWidth="sm"
+          type="text"
+          placeholder="Search for venue name"
+          onChange={handleSearch}
+        />
+      </Flex>
       {isLoading ? (
         <p>Loading...</p>
       ) : isError ? (
         <p>Error fetching data</p>
       ) : sortedVenues.length > 0 ? (
         <div>
-          <h2 color="brand.brick">Venues:</h2>
-          <ul>
+          <Flex p={10} gap={10} wrap="wrap" justifyContent="center">
             {sortedVenues.map((venue) => (
               <VenueCard key={venue.id} venue={venue} />
             ))}
-          </ul>
-          <div>
-            <button onClick={handlePreviousPage}>Previous</button>
-            <button onClick={handleNextPage}>Next</button>
-          </div>
+          </Flex>
+
+          <Flex gap={10} mb={5} alignItems={"center"} justifyContent={"center"}>
+            <Button
+              color="brand.darkBrick"
+              bg="brand.beige"
+              onClick={handlePreviousPage}>
+              Previous
+            </Button>
+            <Text>Page: {pageNumber + 1}</Text>
+            <Button
+              color="brand.darkBrick"
+              bg="brand.beige"
+              onClick={handleNextPage}>
+              Next
+            </Button>
+          </Flex>
         </div>
       ) : (
         <p>No venues available</p>

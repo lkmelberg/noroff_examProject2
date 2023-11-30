@@ -4,7 +4,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
-import { theme } from "./theme.ts";
+import { theme } from "./theme/theme.ts";
+import { brandSecondary } from "./theme/buttonTheme.jsx";
 // Supports weights 300-800
 import "@fontsource-variable/open-sans";
 // Supports weights 400-900

@@ -16,6 +16,8 @@ export function Footer() {
     <div>
       {" "}
       <Container
+        minW="100vw"
+        p={50}
         as="footer"
         role="contentinfo"
         py={{

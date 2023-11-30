@@ -9,7 +9,6 @@ export function VenueList() {
 
   return (
     <div>
-      This is VenueList
       <VenueListRender
         isLoading={isLoading}
         isError={isError}
