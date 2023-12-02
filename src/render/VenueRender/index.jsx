@@ -61,9 +61,9 @@ export function VenueRender({ isLoading, isError, venue }) {
           <Flex
             direction={"row"}
             mt={1}
-            mb={1}
+            mb={5}
             wrap={"wrap"}
-            gap={"2rem"}
+            gap={"1rem"}
             alignItems={"center"}
             justifyContent={"space-around"}>
             {/* description cont  */}
@@ -72,32 +72,33 @@ export function VenueRender({ isLoading, isError, venue }) {
               <Text mb={3} textStyle={"bodyText"}>
                 Max Guests: {maxGuests}
               </Text>
-              <Text maxW={"15rem"} textStyle={"bodyText"}>
+              <Text maxW={"20rem"} textStyle={"bodyText"}>
                 {description}
               </Text>
             </Flex>
+            <Flex direction={"row"} wrap={"wrap"} gap={"4rem"}>
+              {/* description and features divider        */}
+              <Stack direction="row" h="8rem">
+                <Divider orientation="vertical" />
+                {/* features cont  */}
+                <Flex style={flexInfoStyle}>
+                  <Text textStyle={"lato"}>Features</Text>
 
-            {/* description and features divider        */}
-            <Stack direction="row" h="8rem">
-              <Divider orientation="vertical" />
-              {/* features cont  */}
-              <Flex style={flexInfoStyle}>
-                <Text textStyle={"lato"}>Features</Text>
+                  <Meta meta={meta} listItemStyle={listItemStyle} />
+                </Flex>
+              </Stack>
 
-                <Meta meta={meta} listItemStyle={listItemStyle} />
-              </Flex>
-            </Stack>
+              {/* features and location divider        */}
+              <Stack direction="row" h="8rem">
+                <Divider orientation="vertical" />
 
-            {/* features and location divider        */}
-            <Stack direction="row" h="8rem">
-              <Divider orientation="vertical" />
-
-              {/* locations cont  */}
-              <Flex style={flexInfoStyle}>
-                <Text textStyle={"lato"}>Location</Text>
-                <Location location={location} listItemStyle={listItemStyle} />
-              </Flex>
-            </Stack>
+                {/* locations cont  */}
+                <Flex style={flexInfoStyle}>
+                  <Text textStyle={"lato"}>Location</Text>
+                  <Location location={location} listItemStyle={listItemStyle} />
+                </Flex>
+              </Stack>
+            </Flex>
           </Flex>
           {/* top divider        */}
           <Divider orientation="horizontal" />
