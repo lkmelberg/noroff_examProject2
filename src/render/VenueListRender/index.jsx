@@ -86,7 +86,7 @@ export function VenueListRender({ isLoading, isError, venues }) {
           </Flex>
         </div>
       ) : (
-        <p>No venues available</p>
+        <p>Please wait...</p>
       )}
     </div>
   );

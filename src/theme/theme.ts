@@ -3,10 +3,22 @@ import { extendTheme } from "@chakra-ui/react";
 
 // Version 1: Using objects
 export const theme = extendTheme({
-  fonts: {
-    heading: `'Playfair Display Variable', serif`,
-    // H2: `'Lato', sans-serif`,
-    body: `'Open Sans Variable', sans-serif`,
+  textStyles: {
+    playfair: {
+      fontSize: "2em",
+      fontWeight: "light",
+      fontFamily: `'Playfair Display Variable', serif`,
+    },
+    lato: {
+      fontSize: "1em",
+      fontWeight: "regular",
+      fontFamily: `'Lato', sans-serif`,
+    },
+    bodyText: {
+      fontSize: ".8em",
+      fontWeight: "",
+      fontFamily: `'Open Sans Variable', sans-serif`,
+    },
   },
   colors: {
     brand: {

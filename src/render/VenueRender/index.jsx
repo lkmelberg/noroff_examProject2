@@ -1,41 +1,26 @@
-// import React, { useState, useEffect } from "react";
-import { Heading, Flex } from "@chakra-ui/react";
-// import VenueCard from "../VenueCard";
+import { Flex, Text, Image, Divider, Stack } from "@chakra-ui/react";
+import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
+import { Meta } from "../Meta";
+import { Location } from "../Location";
 
 export function VenueRender({ isLoading, isError, venue }) {
-  //   const [searchTerm, setSearchTerm] = useState("");
-  //   const [pageNumber, setPageNumber] = useState(0);
-  //   const [pageSize, setPageSize] = useState(8);
-  //   const [filteredVenues, setFilteredVenues] = useState([]);
-  //   const [sortedVenues, setSortedVenues] = useState([]);
+  const { name, description, media, price, maxGuests, meta, location } = venue;
 
-  //   useEffect(() => {
-  //     setFilteredVenues(
-  //       venues
-  //         .filter((venue) =>
-  //           venue.name.toLowerCase().includes(searchTerm.toLowerCase())
-  //         )
-  //         .sort((a, b) => new Date(b.created) - new Date(a.created))
-  //     );
-  //   }, [venues, searchTerm]);
+  let images = null;
+  if (venue && media && media.length >= 1) {
+    images = media.slice(0, 4);
+  }
 
-  //   useEffect(() => {
-  //     setSortedVenues(
-  //       filteredVenues.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize)
-  //     );
-  //   }, [filteredVenues, pageNumber, pageSize]);
+  const listItemStyle = {
+    display: "flex",
+    alignItems: "center",
+    whiteSpace: "nowrap",
+  };
 
-  //   const handleSearch = (e) => {
-  //     setSearchTerm(e.target.value);
-  //   };
-
-  //   const handleNextPage = () => {
-  //     setPageNumber((prevPageNumber) => prevPageNumber + 1);
-  //   };
-
-  //   const handlePreviousPage = () => {
-  //     setPageNumber((prevPageNumber) => prevPageNumber - 1);
-  //   };
+  const flexInfoStyle = {
+    flexDirection: "column",
+    flexWrap: "nowrap",
+  };
 
   return (
     <div>
@@ -44,10 +29,78 @@ export function VenueRender({ isLoading, isError, venue }) {
       ) : isError ? (
         <p>Error fetching data</p>
       ) : (
-        <Flex direction={"column"} marginTop={"1rem"} alignItems={"center"}>
-          <Heading pb={3} color="brand.beige">
-            {venue.name}
-          </Heading>
+        //   main cont
+        <Flex direction={"column"} margin={"2rem"}>
+          {/* header cont */}
+          <Text as={"h1"} textStyle={"playfair"} pb={3} color="brand.beige">
+            {name}
+          </Text>
+          {/* price cont */}
+          <Text textStyle={"lato"}>Price per night: ${price}</Text>
+          {/* image cont  */}
+          <Flex wrap={"wrap"}>
+            {images ? (
+              images.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt={`Image ${index}`}
+                  boxSize="10rem"
+                  m="2"
+                />
+              ))
+            ) : (
+              <Text>No media</Text>
+            )}
+          </Flex>
+
+          {/* top divider        */}
+          <Divider orientation="horizontal" />
+
+          {/* description, features, locations cont  */}
+          <Flex
+            direction={"row"}
+            mt={1}
+            mb={1}
+            wrap={"wrap"}
+            gap={"2rem"}
+            alignItems={"center"}
+            justifyContent={"space-around"}>
+            {/* description cont  */}
+            <Flex style={flexInfoStyle}>
+              <Text textStyle={"lato"}>Description</Text>
+              <Text mb={3} textStyle={"bodyText"}>
+                Max Guests: {maxGuests}
+              </Text>
+              <Text maxW={"15rem"} textStyle={"bodyText"}>
+                {description}
+              </Text>
+            </Flex>
+
+            {/* description and features divider        */}
+            <Stack direction="row" h="8rem">
+              <Divider orientation="vertical" />
+              {/* features cont  */}
+              <Flex style={flexInfoStyle}>
+                <Text textStyle={"lato"}>Features</Text>
+
+                <Meta meta={meta} listItemStyle={listItemStyle} />
+              </Flex>
+            </Stack>
+
+            {/* features and location divider        */}
+            <Stack direction="row" h="8rem">
+              <Divider orientation="vertical" />
+
+              {/* locations cont  */}
+              <Flex style={flexInfoStyle}>
+                <Text textStyle={"lato"}>Location</Text>
+                <Location location={location} listItemStyle={listItemStyle} />
+              </Flex>
+            </Stack>
+          </Flex>
+          {/* top divider        */}
+          <Divider orientation="horizontal" />
         </Flex>
       )}
     </div>
