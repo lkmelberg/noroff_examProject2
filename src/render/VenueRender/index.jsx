@@ -21,7 +21,7 @@ export function VenueRender({ isLoading, isError, venue }) {
     flexDirection: "column",
     flexWrap: "nowrap",
   };
-
+  console.log(venue);
   return (
     <div>
       {isLoading ? (
