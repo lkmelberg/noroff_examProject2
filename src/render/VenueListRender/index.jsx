@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Input, Heading, Flex, Button, Text } from "@chakra-ui/react";
 import VenueCard from "../VenueCard";
 
-export const VenueListRender = ({ isLoading, isError, venues }) => {
+export function VenueListRender({ isLoading, isError, venues }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [pageSize, setPageSize] = useState(8);
@@ -90,4 +90,4 @@ export const VenueListRender = ({ isLoading, isError, venues }) => {
       )}
     </div>
   );
-};
+}
