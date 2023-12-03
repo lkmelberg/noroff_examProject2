@@ -27,17 +27,6 @@ export async function fetchData(
 }
 
 // POST
-// export async function postData(endpoint, data) {
-//   try {
-//     const response = await fetchData(endpoint, "POST", data);
-//     console.log("Response:", response);
-//     return response;
-//   } catch (error) {
-//     console.error("Error submitting data:", error);
-//     throw error;
-//   }
-// }
-
 export async function postData(endpoint, data) {
   const requestOptions = {
     method: "POST",
@@ -48,9 +37,12 @@ export async function postData(endpoint, data) {
   };
 
   const response = await fetch(endpoint, requestOptions);
+
   if (!response.ok) {
+    console.log(response);
     throw new Error("Network response was not ok");
   }
+  console.log(response);
   return response.json();
 }
 

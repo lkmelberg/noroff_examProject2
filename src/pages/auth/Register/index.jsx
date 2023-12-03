@@ -1,7 +1,7 @@
 import React from "react";
-import AuthForm from "../../../render/profile/AuthForm";
+import AuthForm from "../../../components/AuthForm";
 import ENDPOINTS from "../../../utils/api/endpoints";
-import { YupSchemaRegister } from "../../../utils/validation/YupSchema";
+import { YupSchemaRegister } from "../../../utils/profile/YupSchema";
 
 export function Register() {
   const registerFields = {
