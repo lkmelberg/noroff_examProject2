@@ -22,7 +22,7 @@ export const theme = extendTheme({
   },
   colors: {
     brand: {
-      lightBlue: "#89B3D9",
+      blue: "#89B3D9",
       lightBrick: "#D99962",
       brick: "#A64521",
       darkBrick: "#59220E",

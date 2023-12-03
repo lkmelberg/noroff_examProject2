@@ -1,8 +1,8 @@
 // VenueList.js
 import React from "react";
-import { VenueListRender } from "../../../render/VenueListRender";
 import { useFetchData } from "../../../utils/api/UseFetchedData";
 import ENDPOINTS from "../../../utils/api/endpoints";
+import { VenueListRender } from "../../../render/venue/VenueListRender";
 
 export function VenueList() {
   const { data: venues, isLoading, isError } = useFetchData(ENDPOINTS.VENUES);
