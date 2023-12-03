@@ -1,5 +1,4 @@
 import { Flex, Text, Image, Divider, Stack } from "@chakra-ui/react";
-import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 import { Meta } from "../Meta";
 import { Location } from "../Location";
 

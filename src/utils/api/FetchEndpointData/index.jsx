@@ -1,7 +1,11 @@
-import React from "react";
-
-export function FetchEndpointData(endpoint) {
-  return fetch(endpoint)
+export function FetchEndpointData(endpoint, method = "GET", body = {}) {
+  return fetch(endpoint, {
+    method: method,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  })
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
