@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { YupSchema } from "../../../utils/validation/YupSchema";
-import { FetchEndpointData } from "../../../utils/api/FetchEndpointData";
+// import { EndpointDataPostUpdate } from "../../../utils/api/EndpointDataPostUpdate";
+import ENDPOINTS from "../../../utils/api/endpoints";
 
 import {
   Flex,
@@ -22,7 +23,23 @@ import {
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
-export default function RegisterRender(ENDPOINT) {
+async function postData(endpoint, data) {
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+
+  const response = await fetch(endpoint, requestOptions);
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
+}
+
+export default function RegisterRender() {
   const {
     register,
     handleSubmit,
@@ -34,8 +51,7 @@ export default function RegisterRender(ENDPOINT) {
   const onSubmit = async (data) => {
     console.log(data);
     try {
-      const response = await FetchEndpointData(ENDPOINT, "POST", data);
-
+      const response = await postData(ENDPOINTS.AUTH_REGISTER, data);
       console.log("Response:", response);
     } catch (error) {
       console.error("Error submitting data:", error);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FetchEndpointData } from "../FetchEndpointData";
+import { FetchVenueData } from "../FetchVenueData";
 
 export function useFetchData(endpoint) {
   const [data, setData] = useState([]);
@@ -12,7 +12,7 @@ export function useFetchData(endpoint) {
       setIsLoading(true);
 
       try {
-        const fetchedData = await FetchEndpointData(endpoint);
+        const fetchedData = await FetchVenueData(endpoint);
         setData(fetchedData);
       } catch (error) {
         setIsError(true);

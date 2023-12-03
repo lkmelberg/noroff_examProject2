@@ -14,6 +14,8 @@ import {
 
 function VenueCard({ venue }) {
   const id = venue.id;
+  const formattedPrice = Math.floor(Number(venue.price));
+  const formattedMaxGuests = Math.floor(Number(venue.maxGuests));
   return (
     <Flex key={venue.id}>
       <Center py={12} paddingBottom={4}>
@@ -63,7 +65,7 @@ function VenueCard({ venue }) {
               color={"brand.darkBrick"}
               fontSize={"sm"}
               textTransform={"uppercase"}>
-              Guest Spaces: {venue.maxGuests}
+              Guest Spaces: {formattedMaxGuests}
             </Text>
             <Heading
               color={"brand.darkBrick"}
@@ -73,7 +75,7 @@ function VenueCard({ venue }) {
             </Heading>
             <Stack direction={"row"} align={"center"}>
               <Text color={"brand.brick"} fontWeight={800} fontSize={"xl"}>
-                ${venue.price}
+                ${formattedPrice}
               </Text>
               <Text color={"brand.brick"}>Per Night</Text>
             </Stack>

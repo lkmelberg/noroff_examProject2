@@ -1,11 +1,7 @@
-export function FetchEndpointData(endpoint, method = "GET", body = {}) {
-  return fetch(endpoint, {
-    method: method,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  })
+import React from "react";
+
+export function FetchVenueData(endpoint) {
+  return fetch(endpoint)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
