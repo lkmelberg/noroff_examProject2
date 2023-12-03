@@ -1,11 +1,26 @@
 import React from "react";
-// import { RegisterRender } from "../../../render/profile/RegisterRender";
+import AuthForm from "../../../components/AuthForm";
+import { YupSchemaLogin } from "../../../utils/profile/YupSchema";
+import ENDPOINTS from "../../../utils/api/endpoints";
 
 export function Login() {
+  const loginFields = {
+    schema: YupSchemaLogin(),
+    inputs: [
+      { id: "email", label: "Email address", type: "email" },
+      { id: "password", label: "Password", type: "password" },
+    ],
+  };
+
   return (
-    <div>
-      this is login
-      {/* <LoginRender></LoginRender> */}
-    </div>
+    <AuthForm
+      endpoint={ENDPOINTS.AUTH_LOGIN}
+      fields={loginFields}
+      title="Login to your account"
+      buttonText="Login"
+      switchText="Don't have an account?"
+      switchLink="../Register"
+      switchLinkText="Create account"
+    />
   );
 }

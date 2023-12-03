@@ -2,8 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useFetchData } from "../../../utils/api/UseFetchedData";
 import ENDPOINTS from "../../../utils/api/endpoints";
-import { VenueRender } from "../../../render/venue/VenueRender";
-import { Calendar } from "../../../render/venue/Calendar";
+import { VenueRender } from "../../../components/render/venue/VenueRender";
+import { Calendar } from "../../../components/render/venue/Calendar";
 
 export function Venue() {
   let { id } = useParams();

@@ -28,14 +28,22 @@ export async function fetchData(
 
 // POST
 export async function postData(endpoint, data) {
-  try {
-    const response = await fetchData(endpoint, "POST", data);
-    console.log("Response:", response);
-    return response;
-  } catch (error) {
-    console.error("Error submitting data:", error);
-    throw error;
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+
+  const response = await fetch(endpoint, requestOptions);
+
+  if (!response.ok) {
+    console.log(response);
+    throw new Error("Network response was not ok");
   }
+  console.log(response);
+  return response.json();
 }
 
 // PUT
