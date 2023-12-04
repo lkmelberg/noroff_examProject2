@@ -23,6 +23,7 @@ export function FormInputs({
             <CustomInput
               type={input.type}
               showPassword={showPassword}
+              setShowPassword={setShowPassword}
               register={register}
               inputId={input.id}
             />

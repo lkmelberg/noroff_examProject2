@@ -1,8 +1,15 @@
+// CustomInput.js
 import React from "react";
 import { InputGroup, Input, Button, InputRightElement } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
-export function CustomInput({ type, showPassword, register, inputId }) {
+export function CustomInput({
+  type,
+  showPassword,
+  setShowPassword,
+  register,
+  inputId,
+}) {
   return (
     <InputGroup>
       <Input
@@ -14,7 +21,7 @@ export function CustomInput({ type, showPassword, register, inputId }) {
           <Button
             bg={"brand.beige"}
             variant={"ghost"}
-            onClick={() => setShowPassword((show) => !show)}>
+            onClick={() => setShowPassword((showPassword) => !showPassword)}>
             {showPassword ? <ViewIcon /> : <ViewOffIcon />}
           </Button>
         </InputRightElement>

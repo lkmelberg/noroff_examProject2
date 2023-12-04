@@ -1,5 +1,5 @@
 import React from "react";
 
-export function ProfilePage() {
+export function CustomerProfile() {
   return <div>This is Profile Page</div>;
 }
