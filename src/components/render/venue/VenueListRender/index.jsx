@@ -48,9 +48,9 @@ export function VenueListRender({ isLoading, isError, venues }) {
           bg={"brand.beige"}
           borderColor="brand.brand.beige"
           focusBorderColor="brand.brand.beige"
-          color={"brand.beige"}
+          color={"brand.darkBrick"}
           size={"md"}
-          _placeholder={{ color: "brand.brick" }}
+          _placeholder={{ color: "brand.darkBrick" }}
           maxWidth="sm"
           type="text"
           placeholder="Search for venue name"
