@@ -2,7 +2,7 @@ export async function fetchData(
   endpoint,
   method = "GET",
   data = {},
-  authToken = null
+  accessToken = null
 ) {
   const requestOptions = {
     method: method.toUpperCase(),
@@ -11,8 +11,8 @@ export async function fetchData(
     },
   };
 
-  if (authToken) {
-    requestOptions.headers.Authorization = `Bearer ${authToken}`;
+  if (accessToken) {
+    requestOptions.headers.Authorization = `Bearer ${accessToken}`;
   }
 
   if (method !== "GET" && method !== "HEAD") {
@@ -47,9 +47,9 @@ export async function postData(endpoint, data) {
 }
 
 // PUT
-export async function updateData(endpoint, data, authToken) {
+export async function updateData(endpoint, data, accessToken) {
   try {
-    const response = await fetchData(endpoint, "PUT", data, authToken);
+    const response = await fetchData(endpoint, "PUT", data, accessToken);
     console.log("Response:", response);
     return response;
   } catch (error) {
@@ -59,9 +59,9 @@ export async function updateData(endpoint, data, authToken) {
 }
 
 // DELETE
-export async function deleteData(endpoint, authToken) {
+export async function deleteData(endpoint, accessToken) {
   try {
-    const response = await fetchData(endpoint, "DELETE", null, authToken);
+    const response = await fetchData(endpoint, "DELETE", null, accessToken);
     console.log("Response:", response);
     return response;
   } catch (error) {

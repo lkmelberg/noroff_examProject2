@@ -16,7 +16,8 @@ import { CustomerBookings } from "./pages/bookings/CustomerBookings";
 import { ManagerBookings } from "./pages/bookings/ManagerBookings";
 
 // profile
-import { ProfilePage } from "./pages/profiles/ProfilePage";
+import { CustomerProfile } from "./pages/profiles/CustomerProfile";
+import { ManagerProfile } from "./pages/profiles/ManagerProfile";
 import { ProfileAvatar } from "./pages/profiles/ProfileAvatar";
 
 // auth
@@ -33,12 +34,11 @@ function App() {
           <Route path="CreateVenue" element={<CreateVenue />} />
           <Route path="UpdateVenue" element={<UpdateVenue />} />
           <Route path="ManagerVenues" element={<ManagerVenues />} />
+          <Route path="ManagerBookingss" element={<ManagerBookings />} />
+          <Route path="ManagerProfile" element={<ManagerProfile />} />
+          <Route path="CustomerProfile" element={<CustomerProfile />} />
           <Route path="BookingConfirm" element={<BookingConfirm />} />
           <Route path="CustomerBookingss" element={<CustomerBookings />} />
-
-          <Route path="ManagerBookingss" element={<ManagerBookings />} />
-
-          <Route path="ProfilePage" element={<ProfilePage />} />
           <Route path="ProfileAvatar" element={<ProfileAvatar />} />
           <Route path="Login" element={<Login />} />
           <Route path="Register" element={<Register />} />

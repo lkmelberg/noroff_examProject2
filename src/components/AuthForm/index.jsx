@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { postData } from "../../utils/api/Data";
@@ -36,12 +37,18 @@ export default function AuthForm({
       localStorage.setItem("isManager", isManager);
       // Store accessToken in localStorage or a secure storage mechanism for later use
       localStorage.setItem("accessToken", accessToken);
+
+      if (venueManager) {
+        window.location.href = "/ManagerProfile";
+      } else if (!venueManager) {
+        window.location.href = "/";
+      }
     } catch (error) {
       console.error("Error submitting data:", error);
     }
   };
 
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <FormContainer>
