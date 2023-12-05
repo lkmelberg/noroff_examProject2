@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FetchVenueData } from "../FetchVenueData";
 
-export function useFetchData(endpoint) {
+export function UseFetchedData(endpoint) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);

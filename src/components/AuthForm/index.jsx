@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { postData } from "../../utils/api/Data";
+import { PostData } from "../../utils/api/Data";
 import FormContainer from "../render/form/FormContainer";
 import { FormHeader } from "../render/form/FormHeader";
 import { FormInputs } from "../render/form/FormInputs";
@@ -28,7 +28,7 @@ export default function AuthForm({
   const onSubmit = async (data) => {
     console.log(data);
     try {
-      const response = await postData(endpoint, data);
+      const response = await PostData(endpoint, data);
       console.log(response);
       const { name, email, avatar, venueManager, accessToken } = response;
 

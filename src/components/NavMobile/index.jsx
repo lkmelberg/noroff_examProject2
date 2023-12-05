@@ -12,8 +12,8 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { FaBars } from "react-icons/fa";
-import { CheckUserRole } from "../../../utils/profile/CheckUserRole";
-import { LogOut } from "../../../utils/profile/LogOut";
+import { CheckUserRole } from "../../utils/profile/CheckUserRole";
+import { LogOut } from "../../utils/profile/LogOut";
 import { Link } from "react-router-dom";
 
 export function NavMobile() {

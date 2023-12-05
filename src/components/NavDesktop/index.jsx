@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Tabs, TabList, Tab } from "@chakra-ui/react";
 import { NavTab, LogoutTab } from "../NavTab";
-import { isCustomer, isManager } from "../../../utils/Variables";
-import { LogOut } from "../../../utils/profile/LogOut";
+import { isCustomer, isManager } from "../../utils/Variables";
+import { LogOut } from "../../utils/profile/LogOut";
 
 export function NavDesktop() {
   const handleLogoutClick = () => {
