@@ -40,6 +40,9 @@ export function NavMobile() {
           top={4}
           right={4}
           zIndex={10}
+          height="2rem"
+          width="3rem"
+          bg={"brand.beige"}
         />
       ) : null}
       <Drawer
@@ -57,27 +60,31 @@ export function NavMobile() {
                   <Link to="/" label="Venues">
                     Venues
                   </Link>
-                  <Link to="/CustomerBookings" label="Bookings">
+                  <Link to="/Bookings" label="Bookings">
                     Bookings
                   </Link>
-                  <Link to="/CustomerProfile" label="My Profile">
+                  <Link to="/Profile" label="My Profile">
                     Profile
                   </Link>
-                  <Button onClick={handleLogoutClick}>LogOut</Button>
+                  <Button variant={"second"} onClick={handleLogoutClick}>
+                    LogOut
+                  </Button>
                 </>
               )}
               {isManager && (
                 <>
-                  <Link to="/ManagerBookings" label="Bookings">
+                  <Link to="/Bookings" label="Bookings">
                     Bookings
                   </Link>
                   <Link to="/ManagerVenues" label="Properties">
                     Properties
                   </Link>
-                  <Link to="/ManagerProfile" label="Manager Profile">
+                  <Link to="/Profile" label="Manager Profile">
                     Profile
                   </Link>
-                  <Button onClick={handleLogoutClick}>Log Out</Button>
+                  <Button variant={"second"} onClick={handleLogoutClick}>
+                    Logout
+                  </Button>
                 </>
               )}
               {!isCustomer && !isManager && (

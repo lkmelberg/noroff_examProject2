@@ -16,9 +16,8 @@ import { CustomerBookings } from "./pages/bookings/CustomerBookings";
 import { ManagerBookings } from "./pages/bookings/ManagerBookings";
 
 // profile
-import { CustomerProfile } from "./pages/profiles/CustomerProfile";
-import { ManagerProfile } from "./pages/profiles/ManagerProfile";
-import { ProfileAvatar } from "./pages/profiles/ProfileAvatar";
+import { Profile } from "./pages/profiles/Profile";
+import { EditAvatar } from "./pages/profiles/EditAvatar";
 
 // auth
 import { Login } from "./pages/auth/Login";
@@ -35,11 +34,10 @@ function App() {
           <Route path="UpdateVenue" element={<UpdateVenue />} />
           <Route path="ManagerVenues" element={<ManagerVenues />} />
           <Route path="ManagerBookingss" element={<ManagerBookings />} />
-          <Route path="ManagerProfile" element={<ManagerProfile />} />
-          <Route path="CustomerProfile" element={<CustomerProfile />} />
+          <Route path="Profile" element={<Profile />} />
+          <Route path="EditAvatar" element={<EditAvatar />} />
           <Route path="BookingConfirm" element={<BookingConfirm />} />
           <Route path="CustomerBookingss" element={<CustomerBookings />} />
-          <Route path="ProfileAvatar" element={<ProfileAvatar />} />
           <Route path="Login" element={<Login />} />
           <Route path="Register" element={<Register />} />
           <Route path="*" element={<Error />} />
