@@ -55,6 +55,7 @@ export const theme = extendTheme({
         margin: 0,
         minW: "320px",
         minH: "100vh",
+        paddingBottom: "200px",
       },
       header: {
         margin: 1,
@@ -63,6 +64,10 @@ export const theme = extendTheme({
         bg: "brand.lightBeige",
         color: "brand.darkBrick",
         margin: "0%",
+        position: "absolute",
+        left: "0",
+        bottom: "0",
+        right: "0",
       },
       // styles for the `a`
       // a: {
