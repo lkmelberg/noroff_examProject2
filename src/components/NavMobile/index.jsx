@@ -29,6 +29,10 @@ export function NavMobile() {
     setShowDrawer(!showDrawer);
   };
 
+  const closeDrawer = () => {
+    setShowDrawer(false);
+  };
+
   return (
     <>
       {isMobile ? (
@@ -45,10 +49,7 @@ export function NavMobile() {
           bg={"brand.beige"}
         />
       ) : null}
-      <Drawer
-        isOpen={showDrawer}
-        placement="right"
-        onClose={() => setShowDrawer(false)}>
+      <Drawer isOpen={showDrawer} placement="right" onClose={closeDrawer}>
         <DrawerOverlay />
         <DrawerContent bg={"brand.darkBrick"}>
           <DrawerCloseButton />
@@ -57,13 +58,13 @@ export function NavMobile() {
             <VStack spacing={4} align="stretch">
               {isCustomer && (
                 <>
-                  <Link to="/" label="Venues">
+                  <Link to="/" label="Venues" onClick={closeDrawer}>
                     Venues
                   </Link>
-                  <Link to="/Bookings" label="Bookings">
+                  <Link to="/Bookings" label="Bookings" onClick={closeDrawer}>
                     Bookings
                   </Link>
-                  <Link to="/Profile" label="My Profile">
+                  <Link to="/Profile" label="My Profile" onClick={closeDrawer}>
                     Profile
                   </Link>
                   <Button variant={"second"} onClick={handleLogoutClick}>
@@ -73,13 +74,19 @@ export function NavMobile() {
               )}
               {isManager && (
                 <>
-                  <Link to="/Bookings" label="Bookings">
+                  <Link to="/Bookings" label="Bookings" onClick={closeDrawer}>
                     Bookings
                   </Link>
-                  <Link to="/ManagerVenues" label="Properties">
+                  <Link
+                    to="/ManagerVenues"
+                    label="Properties"
+                    onClick={closeDrawer}>
                     Properties
                   </Link>
-                  <Link to="/Profile" label="Manager Profile">
+                  <Link
+                    to="/Profile"
+                    label="Manager Profile"
+                    onClick={closeDrawer}>
                     Profile
                   </Link>
                   <Button variant={"second"} onClick={handleLogoutClick}>
@@ -89,13 +96,13 @@ export function NavMobile() {
               )}
               {!isCustomer && !isManager && (
                 <>
-                  <Link to="/" label="Venues">
+                  <Link to="/" label="Venues" onClick={closeDrawer}>
                     Venues
                   </Link>
-                  <Link to="/Login" label="Login">
+                  <Link to="/Login" label="Login" onClick={closeDrawer}>
                     Login
                   </Link>
-                  <Link to="/Register" label="Register">
+                  <Link to="/Register" label="Register" onClick={closeDrawer}>
                     Register
                   </Link>
                 </>

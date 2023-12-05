@@ -48,7 +48,38 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
-      // styles for the `body`
+      form: {
+        textarea: {
+          width: "10rem",
+          height: "2rem",
+          padding: "0.5rem",
+          border: "0.1rem solid",
+          borderColor: "brand.beige",
+          borderRadius: "0.5rem",
+          backgroundColor: "transparent",
+          color: "inherit",
+          transition: "border-color 0.3s ease-in-out",
+          _focus: {
+            borderColor: "brand.blue", // Change border color on focus if needed
+            outline: "none",
+          },
+        },
+        input: {
+          width: "10rem",
+          height: "2rem",
+          padding: "0.5rem",
+          border: "0.1rem solid",
+          borderColor: "brand.beige",
+          borderRadius: "0.5rem",
+          backgroundColor: "transparent",
+          color: "inherit",
+          transition: "border-color 0.3s ease-in-out",
+          _focus: {
+            borderColor: "brand.blue", // Change border color on focus if needed
+            outline: "none",
+          },
+        },
+      },
       body: {
         bg: "brand.darkBrick",
         color: "brand.beige",
