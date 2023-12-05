@@ -46,7 +46,6 @@ export async function FetchData(
     throw error;
   }
 }
-
 // POST
 export async function PostData(endpoint, data) {
   const requestOptions = {
@@ -65,6 +64,19 @@ export async function PostData(endpoint, data) {
   }
   console.log(response);
   return response.json();
+}
+
+// POST
+export async function PostVenue(endpoint, data, accessToken) {
+  try {
+    const response = await FetchData(endpoint, "POST", data, accessToken);
+
+    console.log("Response:", response);
+    return response;
+  } catch (error) {
+    console.error("Error updating data:", error);
+    throw error;
+  }
 }
 
 // PUT

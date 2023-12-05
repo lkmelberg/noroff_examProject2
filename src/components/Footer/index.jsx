@@ -31,7 +31,6 @@ export function Footer() {
           }}>
           <Stack justify="space-between" direction="row" align="center">
             <Image
-              ali
               width={150}
               height={50}
               src={logoLight}

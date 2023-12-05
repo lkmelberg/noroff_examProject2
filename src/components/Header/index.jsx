@@ -9,7 +9,6 @@ export function Header() {
     <Flex as="header" direction="column" alignItems="center">
       <Link to="/">
         <Image
-          ali
           width={150}
           height={50}
           src={logoDark}
