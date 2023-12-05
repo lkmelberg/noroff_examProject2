@@ -1,3 +1,5 @@
+import { accessToken } from "../../Variables";
+
 export async function fetchData(
   endpoint,
   method = "GET",

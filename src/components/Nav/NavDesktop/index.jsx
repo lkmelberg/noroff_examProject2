@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { Tabs, TabList, Tab } from "@chakra-ui/react";
 import { NavTab, LogoutTab } from "../NavTab";
-import { CheckUserRole } from "../../../utils/profile/CheckUserRole";
+import { isCustomer, isManager } from "../../../utils/Variables";
 import { LogOut } from "../../../utils/profile/LogOut";
 
 export function NavDesktop() {
-  const { isCustomer, isManager } = CheckUserRole();
-
   const handleLogoutClick = () => {
     LogOut();
   };
@@ -16,17 +14,18 @@ export function NavDesktop() {
       return (
         <>
           <NavTab path="/" label="Venues" />
-          <NavTab path="/CustomerBookings" label="Bookings" />
-          <NavTab path="/CustomerProfile" label="My Profile" />
+          <NavTab path="/Bookings" label="Bookings" />
+          <NavTab path="/Profile" label="Profile" />
           <LogoutTab handleClick={handleLogoutClick} />
         </>
       );
-    } else if (isManager) {
+    }
+    if (isManager) {
       return (
         <>
-          <NavTab path="/ManagerBookings" label="Bookings" />
+          <NavTab path="/Bookings" label="Bookings" />
           <NavTab path="/ManagerVenues" label="Properties" />
-          <NavTab path="/ManagerProfile" label="Manager Profile" />
+          <NavTab path="/Profile" label="Profile" />
           <LogoutTab handleClick={handleLogoutClick} />
         </>
       );

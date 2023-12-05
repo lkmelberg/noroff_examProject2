@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Input, Heading, Flex, Button, Text } from "@chakra-ui/react";
+import { Input, Flex, Button, Text } from "@chakra-ui/react";
 import VenueCard from "../VenueCard";
 
 export function VenueListRender({ isLoading, isError, venues }) {
@@ -40,9 +40,9 @@ export function VenueListRender({ isLoading, isError, venues }) {
   return (
     <div>
       <Flex direction={"column"} marginTop={"1rem"} alignItems={"center"}>
-        <Heading pb={3} color="brand.beige">
+        <Text textStyle={"playfair"} pb={3} color="brand.beige">
           Venues
-        </Heading>
+        </Text>
 
         <Input
           bg={"brand.beige"}

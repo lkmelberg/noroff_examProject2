@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import {
   Box,
   Center,
-  Heading,
   Text,
   Stack,
   Image,
@@ -67,12 +66,13 @@ function VenueCard({ venue }) {
               textTransform={"uppercase"}>
               Guest Spaces: {formattedMaxGuests}
             </Text>
-            <Heading
+            <Text
+              textStyle={"playfair"}
               color={"brand.darkBrick"}
               fontSize={"2xl"}
               fontWeight={500}>
               {venue.name}
-            </Heading>
+            </Text>
             <Stack direction={"row"} align={"center"}>
               <Text color={"brand.brick"} fontWeight={800} fontSize={"xl"}>
                 ${formattedPrice}

@@ -30,17 +30,24 @@ export const theme = extendTheme({
       lightBeige: "#FFEFE0",
     },
   },
-  styles: {
-    global: {
-      button: {
+  components: {
+    Button: {
+      baseStyle: {
         bg: "brand.darkBrick",
         color: "brand.beige",
-        buttonSecondary: {
+      },
+      variants: {
+        second: {
           bg: "brand.beige",
           color: "brand.darkBrick",
+          height: "2.5rem",
+          width: "7.5rem",
         },
       },
-
+    },
+  },
+  styles: {
+    global: {
       // styles for the `body`
       body: {
         bg: "brand.darkBrick",

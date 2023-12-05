@@ -32,17 +32,13 @@ export default function AuthForm({
       console.log(response);
       const { name, email, avatar, venueManager, accessToken } = response;
 
-      // Check if the user is a manager
-      const isManager = venueManager;
-      localStorage.setItem("isManager", isManager);
-      // Store accessToken in localStorage or a secure storage mechanism for later use
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("avatar", avatar);
+      localStorage.setItem("isManager", venueManager);
       localStorage.setItem("accessToken", accessToken);
 
-      if (venueManager) {
-        window.location.href = "/ManagerProfile";
-      } else if (!venueManager) {
-        window.location.href = "/";
-      }
+      window.location.href = "/Profile";
     } catch (error) {
       console.error("Error submitting data:", error);
     }
