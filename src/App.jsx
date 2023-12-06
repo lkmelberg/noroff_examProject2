@@ -37,7 +37,7 @@ function App() {
           <Route path="Profile" element={<Profile />} />
           <Route path="EditAvatar" element={<EditAvatar />} />
           <Route path="BookingConfirm" element={<BookingConfirm />} />
-          <Route path="CustomerBookingss" element={<CustomerBookings />} />
+          <Route path="CustomerBookings" element={<CustomerBookings />} />
           <Route path="Login" element={<Login />} />
           <Route path="Register" element={<Register />} />
           <Route path="*" element={<Error />} />
