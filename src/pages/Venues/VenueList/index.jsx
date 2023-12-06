@@ -4,7 +4,11 @@ import ENDPOINTS from "../../../utils/api/endpoints";
 import { VenueListRender } from "../../../components/render/venue/VenueListRender";
 
 export function VenueList() {
-  const { data: venues, isLoading, isError } = UseFetchedData(ENDPOINTS.VENUES);
+  const {
+    data: venues,
+    isLoading,
+    isError,
+  } = UseFetchedData(ENDPOINTS.VENUES_ALL);
 
   return (
     <>
@@ -13,6 +17,7 @@ export function VenueList() {
         isError={isError}
         venues={venues}
         headerText="Venues"
+        buttons={[{ action: "view", label: "See more" }]}
       />
     </>
   );

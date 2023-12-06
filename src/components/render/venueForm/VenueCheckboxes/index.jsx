@@ -2,7 +2,7 @@ import React from "react";
 import { Flex } from "@chakra-ui/react";
 import { formItemStyle } from "../Styling";
 
-export function VenueCheckboxes({ errors, handleMetaChange }) {
+export function VenueCheckboxes({ errors, handleInputChange }) {
   return (
     <Flex minW={"22rem"} gap={".3rem"} direction={"column"}>
       {/* Wifi */}
@@ -12,7 +12,7 @@ export function VenueCheckboxes({ errors, handleMetaChange }) {
           id="wifi"
           name="wifi"
           type="checkbox"
-          onClick={handleMetaChange}
+          onClick={handleInputChange}
         />
         {errors.wifi && <div>{errors.wifi}</div>}
       </div>
@@ -24,7 +24,7 @@ export function VenueCheckboxes({ errors, handleMetaChange }) {
           id="parking"
           name="parking"
           type="checkbox"
-          onChange={handleMetaChange}
+          onChange={handleInputChange}
         />
         {errors.parking && <div>{errors.parking}</div>}
       </div>
@@ -36,7 +36,7 @@ export function VenueCheckboxes({ errors, handleMetaChange }) {
           id="breakfast"
           name="breakfast"
           type="checkbox"
-          onChange={handleMetaChange}
+          onChange={handleInputChange}
         />
         {errors.breakfast && <div>{errors.breakfast}</div>}
       </div>
@@ -48,7 +48,7 @@ export function VenueCheckboxes({ errors, handleMetaChange }) {
           id="pets"
           name="pets"
           type="checkbox"
-          onChange={handleMetaChange}
+          onChange={handleInputChange}
         />
         {errors.pets && <div>{errors.pets}</div>}
       </div>

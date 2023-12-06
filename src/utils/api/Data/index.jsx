@@ -59,9 +59,11 @@ export async function DeleteData(endpoint, accessToken) {
   try {
     const response = await FetchData(endpoint, "DELETE", null, accessToken);
     console.log("Response:", response);
+    window.location.reload();
     return response;
   } catch (error) {
     console.error("Error deleting data:", error);
+    window.location.reload();
     throw error;
   }
 }

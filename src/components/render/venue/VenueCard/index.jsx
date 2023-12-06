@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import {
   Box,
@@ -10,11 +9,13 @@ import {
   Button,
   Flex,
 } from "@chakra-ui/react";
+import { CardButtonAction } from "../../../CardButtonAction";
 
-function VenueCard({ venue }) {
+function VenueCard({ venue, buttons }) {
   const id = venue.id;
   const formattedPrice = Math.floor(Number(venue.price));
   const formattedMaxGuests = Math.floor(Number(venue.maxGuests));
+
   return (
     <Flex key={venue.id}>
       <Center py={12} paddingBottom={4}>
@@ -80,9 +81,16 @@ function VenueCard({ venue }) {
               <Text color={"brand.brick"}>Per Night</Text>
             </Stack>
 
-            <Button variant="button">
-              <Link to={`/venues/${id}`}>See more</Link>
-            </Button>
+            {buttons.map((btn, index) => (
+              <Button
+                key={index}
+                variant="button"
+                onClick={() =>
+                  CardButtonAction({ id: venue.id, action: btn.action })
+                }>
+                {btn.label}
+              </Button>
+            ))}
           </Stack>
         </Box>
       </Center>

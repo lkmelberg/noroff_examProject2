@@ -25,6 +25,10 @@ export function ManagerVenues() {
         isError={isError}
         venues={venues}
         headerText="Your Venues"
+        buttons={[
+          { action: "edit", label: "Edit Venue" },
+          { action: "delete", label: "Delete Venue" },
+        ]}
       />
     </Flex>
   );

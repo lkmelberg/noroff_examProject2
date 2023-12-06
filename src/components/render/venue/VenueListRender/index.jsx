@@ -2,12 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Input, Flex, Button, Text } from "@chakra-ui/react";
 import VenueCard from "../VenueCard";
 
-export function VenueListRender({ isLoading, isError, venues, headerText }) {
+export function VenueListRender({
+  isLoading,
+  isError,
+  venues,
+  headerText,
+  buttons,
+}) {
   const [searchTerm, setSearchTerm] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [pageSize, setPageSize] = useState(8);
   const [filteredVenues, setFilteredVenues] = useState([]);
-  const [sortedVenues, setSortedVenues] = useState([]);
 
   useEffect(() => {
     setFilteredVenues(
@@ -18,12 +23,6 @@ export function VenueListRender({ isLoading, isError, venues, headerText }) {
         .sort((a, b) => new Date(b.created) - new Date(a.created))
     );
   }, [venues, searchTerm]);
-
-  useEffect(() => {
-    setSortedVenues(
-      filteredVenues.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize)
-    );
-  }, [filteredVenues, pageNumber, pageSize]);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -61,11 +60,11 @@ export function VenueListRender({ isLoading, isError, venues, headerText }) {
         <p>Loading...</p>
       ) : isError ? (
         <p>Error fetching data</p>
-      ) : sortedVenues.length > 0 ? (
+      ) : filteredVenues.length > 0 ? (
         <div>
           <Flex p={10} gap={10} wrap="wrap" justifyContent="center">
-            {sortedVenues.map((venue) => (
-              <VenueCard key={venue.id} venue={venue} />
+            {filteredVenues.map((venue) => (
+              <VenueCard key={venue.id} venue={venue} buttons={buttons} />
             ))}
           </Flex>
 
