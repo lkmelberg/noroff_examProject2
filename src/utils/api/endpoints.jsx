@@ -7,6 +7,8 @@ export const ENDPOINTS = {
   AUTH_REGISTER: `${BASE_URL}/auth/register`,
   AUTH_LOGIN: `${BASE_URL}/auth/login`,
   VENUES: `${BASE_URL}/venues`,
+  MANAGER_VENUES: `${BASE_URL}/profiles/${name}/venues`,
+  PROFILE_BOOKINGS: `${BASE_URL}/profiles/${name}/bookings`,
   BOOKINGS: `${BASE_URL}/bookings`,
 };
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { FetchVenueData } from "../FetchVenueData";
+import { FetchData } from "../Data";
 
-export function UseFetchedData(endpoint) {
+export function UseFetchedData(endpoint, accessToken = null) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -12,7 +12,8 @@ export function UseFetchedData(endpoint) {
       setIsLoading(true);
 
       try {
-        const fetchedData = await FetchVenueData(endpoint);
+        const fetchedData = await FetchData(endpoint, "GET", {}, accessToken);
+        console.log(fetchedData);
         setData(fetchedData);
       } catch (error) {
         setIsError(true);
@@ -23,7 +24,7 @@ export function UseFetchedData(endpoint) {
     };
 
     fetchData();
-  }, [endpoint]);
+  }, [endpoint, accessToken]);
 
   return { data, isLoading, isError };
 }
