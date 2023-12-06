@@ -16,7 +16,7 @@ export const theme = extendTheme({
     },
     bodyText: {
       fontSize: ".8em",
-      fontWeight: "",
+      fontWeight: "regular",
       fontFamily: `'Open Sans Variable', sans-serif`,
     },
   },
@@ -50,8 +50,8 @@ export const theme = extendTheme({
     global: {
       form: {
         textarea: {
-          width: "10rem",
-          height: "2rem",
+          width: "11rem",
+          height: "60px",
           padding: "0.5rem",
           border: "0.1rem solid",
           borderColor: "brand.beige",
@@ -59,13 +59,14 @@ export const theme = extendTheme({
           backgroundColor: "transparent",
           color: "inherit",
           transition: "border-color 0.3s ease-in-out",
+          textStyle: "bodyText",
           _focus: {
-            borderColor: "brand.blue", // Change border color on focus if needed
+            borderColor: "brand.blue",
             outline: "none",
           },
         },
         input: {
-          width: "10rem",
+          width: "11rem",
           height: "2rem",
           padding: "0.5rem",
           border: "0.1rem solid",
@@ -74,8 +75,9 @@ export const theme = extendTheme({
           backgroundColor: "transparent",
           color: "inherit",
           transition: "border-color 0.3s ease-in-out",
+          textStyle: "bodyText",
           _focus: {
-            borderColor: "brand.blue", // Change border color on focus if needed
+            borderColor: "brand.blue",
             outline: "none",
           },
         },

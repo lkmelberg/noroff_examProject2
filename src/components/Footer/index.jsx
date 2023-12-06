@@ -14,15 +14,14 @@ import logoLight from "../../assets/logo/logoLight.svg";
 export function Footer() {
   return (
     <div>
-      {" "}
       <Container
         minW="100vw"
         p={50}
         as="footer"
         role="contentinfo"
         py={{
-          base: "12",
-          md: "16",
+          base: "8",
+          md: "10",
         }}>
         <Stack
           spacing={{
