@@ -9,7 +9,7 @@ export const ENDPOINTS = {
   VENUES: `${BASE_URL}/venues`,
   VENUES_ALL: `${BASE_URL}/venues?sortOrder=asc`,
   MANAGER_VENUES: `${BASE_URL}/profiles/${name}/venues`,
-  PROFILE_BOOKINGS: `${BASE_URL}/profiles/${name}/bookings`,
+  PROFILE_BOOKINGS: `${BASE_URL}/profiles/${name}/bookings?_venue=true`,
   BOOKINGS: `${BASE_URL}/bookings`,
 };
 
