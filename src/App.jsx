@@ -7,7 +7,7 @@ import { Error } from "./pages/Error";
 import { VenueList } from "./pages/Venues/VenueList";
 import { Venue } from "./pages/Venues/Venue";
 import { CreateVenue } from "./pages/Venues/CreateVenue";
-import { UpdateVenue } from "./pages/Venues/UpdateVenue";
+import { UpdateVenue } from "./pages/venues/UpdateVenue";
 import { ManagerVenues } from "./pages/Venues/ManagerVenues";
 
 // bookings
@@ -31,7 +31,7 @@ function App() {
           <Route index element={<VenueList />} />
           <Route path="venues/:id" element={<Venue />} />
           <Route path="CreateVenue" element={<CreateVenue />} />
-          <Route path="UpdateVenue" element={<UpdateVenue />} />
+          <Route path="UpdateVenue/:id" element={<UpdateVenue />} />
           <Route path="ManagerVenues" element={<ManagerVenues />} />
           <Route path="ManagerBookingss" element={<ManagerBookings />} />
           <Route path="Profile" element={<Profile />} />
