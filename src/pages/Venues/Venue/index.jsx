@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { UseFetchedData } from "../../../utils/api/UseFetchedData";
 import ENDPOINTS from "../../../utils/api/endpoints";
 import { VenueRender } from "../../../components/render/venue/VenueRender";
-import { Calendar } from "../../../components/render/venue/Calendar";
+import { Calendar } from "../../../components/Calendar";
 
 export function Venue() {
   let { id } = useParams();
