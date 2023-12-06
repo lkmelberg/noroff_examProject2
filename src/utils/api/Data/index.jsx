@@ -21,65 +21,29 @@ export async function FetchData(
 
   try {
     const response = await fetch(endpoint, requestOptions);
-    console.log(response);
+    console.log("Response:", response);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
 
-    const responseData = await response.json();
-    console.log(responseData);
-
-    // Log errors, status, and statusCode
-    // if (responseData && responseData.errors) {
-    //   console.log("Errors:", responseData.errors);
-    // }
-    // if (responseData && responseData.status) {
-    //   console.log("Status:", responseData.status);
-    // }
-    // if (responseData && responseData.statusCode) {
-    //   console.log("Status Code:", responseData.statusCode);
-    // }
-
-    return responseData;
+    return response.json();
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error(`Error with ${method} request to ${endpoint}:`, error);
     throw error;
   }
 }
-// POST
-export async function PostData(endpoint, data) {
-  const requestOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  };
 
-  const response = await fetch(endpoint, requestOptions);
-
-  if (!response.ok) {
-    console.log(response);
-    throw new Error("Network response was not ok");
-  }
-  console.log(response);
-  return response.json();
-}
-
-// POST
-export async function PostVenue(endpoint, data, accessToken) {
+export async function PostData(endpoint, data, accessToken) {
   try {
     const response = await FetchData(endpoint, "POST", data, accessToken);
-
     console.log("Response:", response);
     return response;
   } catch (error) {
-    console.error("Error updating data:", error);
+    console.error("Error creating venue:", error);
     throw error;
   }
 }
 
-// PUT
 export async function UpdateData(endpoint, data, accessToken) {
   try {
     const response = await FetchData(endpoint, "PUT", data, accessToken);
@@ -91,7 +55,6 @@ export async function UpdateData(endpoint, data, accessToken) {
   }
 }
 
-// DELETE
 export async function DeleteData(endpoint, accessToken) {
   try {
     const response = await FetchData(endpoint, "DELETE", null, accessToken);

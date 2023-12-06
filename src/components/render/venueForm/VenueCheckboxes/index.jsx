@@ -2,7 +2,7 @@ import React from "react";
 import { Flex } from "@chakra-ui/react";
 import { formItemStyle } from "../Styling";
 
-export function VenueCheckboxes({ values, errors, handleMetaChange }) {
+export function VenueCheckboxes({ errors, handleMetaChange }) {
   return (
     <Flex minW={"22rem"} gap={".3rem"} direction={"column"}>
       {/* Wifi */}

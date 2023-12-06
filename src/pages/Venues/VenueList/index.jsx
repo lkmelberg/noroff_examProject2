@@ -7,12 +7,13 @@ export function VenueList() {
   const { data: venues, isLoading, isError } = UseFetchedData(ENDPOINTS.VENUES);
 
   return (
-    <div>
+    <>
       <VenueListRender
         isLoading={isLoading}
         isError={isError}
         venues={venues}
+        headerText="Venues"
       />
-    </div>
+    </>
   );
 }

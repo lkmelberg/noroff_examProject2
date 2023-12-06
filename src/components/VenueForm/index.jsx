@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { PostVenue } from "../../utils/api/Data";
+import { PostData } from "../../utils/api/Data";
 import ENDPOINTS from "../../utils/api/endpoints";
 import { validationSchema } from "../../utils/YupSchema";
 import { token } from "../../utils/Variables";
@@ -72,7 +72,7 @@ export function VenueForm() {
     event.preventDefault();
     try {
       await validationSchema.validate(values, { abortEarly: false });
-      const response = await PostVenue(ENDPOINTS.VENUES, values, token);
+      const response = await PostData(ENDPOINTS.VENUES, values, token);
       // Log the response from the request
       console.log("Response from POST request:", response);
 

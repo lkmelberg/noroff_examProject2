@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Input, Flex, Button, Text } from "@chakra-ui/react";
 import VenueCard from "../VenueCard";
 
-export function VenueListRender({ isLoading, isError, venues }) {
+export function VenueListRender({ isLoading, isError, venues, headerText }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [pageSize, setPageSize] = useState(8);
@@ -41,7 +41,7 @@ export function VenueListRender({ isLoading, isError, venues }) {
     <div>
       <Flex direction={"column"} marginTop={"1rem"} alignItems={"center"}>
         <Text textStyle={"playfair"} pb={3} color="brand.beige">
-          Venues
+          {headerText}
         </Text>
 
         <Input
@@ -86,7 +86,7 @@ export function VenueListRender({ isLoading, isError, venues }) {
           </Flex>
         </div>
       ) : (
-        <p>Please wait...</p>
+        <p>No venues found</p>
       )}
     </div>
   );
