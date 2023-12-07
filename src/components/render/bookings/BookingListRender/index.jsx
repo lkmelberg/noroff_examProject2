@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import BookingCard from "../BookingCard";
 import { Flex } from "@chakra-ui/react";
 
-export function BookingListRender({ isLoading, isError, bookings, buttons }) {
+export default function BookingListRender({
+  isLoading,
+  isError,
+  bookings,
+  buttons,
+}) {
   const [bookingState, setBookingState] = useState([]);
 
   useEffect(() => {

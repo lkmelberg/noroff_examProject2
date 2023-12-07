@@ -2,7 +2,7 @@ import React from "react";
 import { Flex } from "@chakra-ui/react";
 import { formItemStyle } from "../Styling";
 
-export function VenueBasics({ values, errors, handleInputChange }) {
+export function VenueBasics({ values, handleInputChange }) {
   return (
     <Flex minW={"22rem"} gap={".3rem"} direction={"column"}>
       <div style={formItemStyle}>
@@ -14,7 +14,6 @@ export function VenueBasics({ values, errors, handleInputChange }) {
           value={values.name}
           onChange={handleInputChange}
         />
-        {errors.name && <div>{errors.name}</div>}
       </div>
 
       {/* Description */}
@@ -27,13 +26,12 @@ export function VenueBasics({ values, errors, handleInputChange }) {
           value={values.description}
           onChange={handleInputChange}
         />
-        {errors.description && <div>{errors.description}</div>}
       </div>
 
       {/* Image */}
       <div style={formItemStyle}>
         <label htmlFor="media">
-          Images
+          Images URL
           <br />
           (seperate by comma)
         </label>
@@ -45,7 +43,6 @@ export function VenueBasics({ values, errors, handleInputChange }) {
           value={values.media}
           onChange={handleInputChange}
         />
-        {errors.media && <div>{errors.media}</div>}
       </div>
 
       {/* Price */}
@@ -59,7 +56,6 @@ export function VenueBasics({ values, errors, handleInputChange }) {
           value={values.price}
           onChange={handleInputChange}
         />
-        {errors.price && <div>{errors.price}</div>}
       </div>
 
       {/* Max Guests */}
@@ -73,7 +69,6 @@ export function VenueBasics({ values, errors, handleInputChange }) {
           value={values.maxGuests}
           onChange={handleInputChange}
         />
-        {errors.maxGuests && <div>{errors.maxGuests}</div>}
       </div>
     </Flex>
   );
