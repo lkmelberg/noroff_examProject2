@@ -8,7 +8,7 @@ import { VenueList } from "./pages/Venues/VenueList";
 import { Venue } from "./pages/Venues/Venue";
 import { CreateVenue } from "./pages/Venues/CreateVenue";
 import { UpdateVenue } from "./pages/UpdateVenue";
-import { ManagerVenues } from "./pages/venues/ManagerVenues";
+import { ManagerVenues } from "./pages/ManagerVenues";
 
 // bookings
 import { BookingConfirm } from "./pages/bookings/BookingConfirm";
