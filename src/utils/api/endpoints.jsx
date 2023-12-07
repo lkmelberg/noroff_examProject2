@@ -7,7 +7,7 @@ export const ENDPOINTS = {
   AUTH_REGISTER: `${BASE_URL}/auth/register`,
   AUTH_LOGIN: `${BASE_URL}/auth/login`,
   VENUES: `${BASE_URL}/venues`,
-  VENUES_ALL: `${BASE_URL}/venues?sortOrder=desc `,
+  VENUES_ALL: `${BASE_URL}/venues?sortOrder=asc `,
   MANAGER_VENUES: `${BASE_URL}/profiles/${name}/venues`,
   PROFILE_BOOKINGS: `${BASE_URL}/profiles/${name}/bookings?_venue=true`,
   BOOKINGS: `${BASE_URL}/bookings`,

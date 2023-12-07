@@ -11,7 +11,6 @@ import { UpdateVenue } from "./pages/UpdateVenue";
 import { ManagerVenues } from "./pages/ManagerVenues";
 
 // bookings
-import { BookingConfirm } from "./pages/bookings/BookingConfirm";
 import { CustomerBookings } from "./pages/bookings/CustomerBookings";
 import { VenueBookings } from "./pages/bookings/VenueBookings";
 
@@ -36,7 +35,6 @@ function App() {
           <Route path="VenueBookings/:id" element={<VenueBookings />} />
           <Route path="Profile" element={<Profile />} />
           <Route path="EditAvatar" element={<EditAvatar />} />
-          <Route path="BookingConfirm" element={<BookingConfirm />} />
           <Route path="CustomerBookings" element={<CustomerBookings />} />
           <Route path="Login" element={<Login />} />
           <Route path="Register" element={<Register />} />
