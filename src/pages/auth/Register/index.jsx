@@ -8,12 +8,23 @@ export function Register() {
     schema: YupSchemaRegister(),
     inputs: [
       { id: "name", label: "Username", type: "text" },
-      { id: "email", label: "Email address", type: "email" },
+      {
+        id: "email",
+        label: "Email address",
+        type: "email",
+        onChange: handleEmailChange,
+      },
       { id: "password", label: "Password", type: "password" },
       { id: "avatar", label: "Avatar URL", type: "text" },
       { id: "venueManager", label: "Venue Manager", type: "checkbox" },
     ],
   };
+
+  const handleEmailChange = (e) => {
+    const lowercaseEmail = e.target.value.toLowerCase();
+    setValue("email", lowercaseEmail);
+  };
+
   return (
     <AuthForm
       endpoint={ENDPOINTS.AUTH_REGISTER}

@@ -9,7 +9,7 @@ export async function FetchInitialValues(id) {
 
     // Make a GET request to fetch initial values
     const initialValues = await FetchVenueData(endpoint);
-    console.log(initialValues);
+
     return initialValues;
   } catch (error) {
     console.error("Error fetching initial values:", error);

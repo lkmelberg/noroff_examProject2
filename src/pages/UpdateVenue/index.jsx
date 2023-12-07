@@ -10,7 +10,7 @@ import { FetchInitialValues } from "../../components/FetchInitialValues";
 
 export function UpdateVenue() {
   let { id } = useParams();
-  console.log(id);
+
   const [initialValues, setInitialValues] = useState(null);
 
   useEffect(() => {
@@ -30,10 +30,8 @@ export function UpdateVenue() {
   const updateEndpoint = `${ENDPOINTS.VENUES}/${id}`;
 
   const handleSubmit = async (values) => {
-    console.log(values);
     try {
       const response = await UpdateData(updateEndpoint, values, token);
-      console.log(response);
     } catch (error) {
       console.log("error");
     }

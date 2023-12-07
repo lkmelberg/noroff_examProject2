@@ -1,5 +1,12 @@
 # Exam Project 2 - Noroff VOC
 
+## Links to the project deliveries
+
+Hosted Site: https://precious-custard-c580bd.netlify.app/
+Gantt Chart:
+Designs And Styleguide:
+Kanban Board:
+
 ## Project Brief
 
 # Goal
