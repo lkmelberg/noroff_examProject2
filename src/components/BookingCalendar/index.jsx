@@ -12,6 +12,8 @@ export function BookingCalendar({ isLoading, isError, venue }) {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
   const [guests, setGuests] = useState(0);
+  const [bookingError, setBookingError] = useState(null);
+
   let { id } = useParams();
 
   const onChange = (dates) => {
@@ -29,8 +31,6 @@ export function BookingCalendar({ isLoading, isError, venue }) {
         venueId: venue.id,
       };
 
-      console.log(bookingData);
-
       const response = await PostData(
         `${ENDPOINTS.BOOKINGS}`,
         bookingData,
@@ -40,6 +40,9 @@ export function BookingCalendar({ isLoading, isError, venue }) {
       window.location.href = "/CustomerBookings";
     } catch (error) {
       console.error("Error creating booking:", error);
+      setBookingError(
+        "Failed to create booking. Please try again. Remeber to select dates and number of guests"
+      );
     }
   };
 
@@ -99,6 +102,11 @@ export function BookingCalendar({ isLoading, isError, venue }) {
               <Button variant="second" onClick={handleCreateBooking}>
                 Create Booking
               </Button>
+              {bookingError && (
+                <Text color="red" textStyle={"lato"} marginBottom="1rem">
+                  {bookingError}
+                </Text>
+              )}
             </Flex>
           )}
         </>
