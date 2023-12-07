@@ -19,8 +19,9 @@ export function Login() {
       title="Login to your account"
       buttonText="Login"
       switchText="Don't have an account?"
-      switchLink="../Register"
+      switchLink="/Register"
       switchLinkText="Create account"
+      reloadTo="/Profile"
     />
   );
 }
