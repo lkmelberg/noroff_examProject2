@@ -84,18 +84,21 @@ export function Calendar({ isLoading, isError, venue }) {
             selectsDisabledDaysInRange
             inline
           />
-          <Input
-            type="number"
-            placeholder="Number of guests"
-            min="1"
-            value={guests}
-            onChange={(e) => setGuests(parseInt(e.target.value))}
-            marginBottom="1rem"
-          />
+
           {isCustomer && (
-            <Button colorScheme="teal" onClick={handleCreateBooking}>
-              Create Booking
-            </Button>
+            <>
+              <Input
+                type="number"
+                placeholder="Number of guests"
+                min="1"
+                value={guests}
+                onChange={(e) => setGuests(parseInt(e.target.value))}
+                marginBottom="1rem"
+              />
+              <Button colorScheme="teal" onClick={handleCreateBooking}>
+                Create Booking
+              </Button>
+            </>
           )}
         </>
       )}
