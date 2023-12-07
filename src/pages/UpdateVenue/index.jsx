@@ -9,7 +9,7 @@ import { token } from "../../utils/Variables";
 import { FetchInitialValues } from "../../components/FetchInitialValues";
 
 export function UpdateVenue() {
-  let { id } = useParams(); // Extract the 'id' from URL params
+  let { id } = useParams();
   console.log(id);
   const [initialValues, setInitialValues] = useState(null);
 

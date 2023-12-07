@@ -13,7 +13,7 @@ import { ManagerVenues } from "./pages/venues/ManagerVenues";
 // bookings
 import { BookingConfirm } from "./pages/bookings/BookingConfirm";
 import { CustomerBookings } from "./pages/bookings/CustomerBookings";
-import { ManagerBookings } from "./pages/bookings/ManagerBookings";
+import { VenueBookings } from "./pages/bookings/VenueBookings";
 
 // profile
 import { Profile } from "./pages/profiles/Profile";
@@ -33,7 +33,7 @@ function App() {
           <Route path="CreateVenue" element={<CreateVenue />} />
           <Route path="UpdateVenue/:id" element={<UpdateVenue />} />
           <Route path="ManagerVenues" element={<ManagerVenues />} />
-          <Route path="ManagerBookings/:id" element={<ManagerBookings />} />
+          <Route path="VenueBookings/:id" element={<VenueBookings />} />
           <Route path="Profile" element={<Profile />} />
           <Route path="EditAvatar" element={<EditAvatar />} />
           <Route path="BookingConfirm" element={<BookingConfirm />} />

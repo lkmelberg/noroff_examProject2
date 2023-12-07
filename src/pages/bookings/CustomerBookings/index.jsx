@@ -15,12 +15,16 @@ export function CustomerBookings() {
   } = UseFetchedData(ENDPOINTS.PROFILE_BOOKINGS, token);
 
   return (
-    <BookingListRender
-      isLoading={isLoading}
-      isError={isError}
-      bookings={bookings}
-      headerText="Venues"
-      buttons={[{ action: "view", label: "View Venue" }]}
-    />
+    <Flex alignItems={"center"} direction={"column"}>
+      <Text m={"2rem"} textStyle={"playfair"}>
+        Your Bookings
+      </Text>
+      <BookingListRender
+        isLoading={isLoading}
+        isError={isError}
+        bookings={bookings}
+        buttons={[{ action: "view", label: "View Venue" }]}
+      />
+    </Flex>
   );
 }

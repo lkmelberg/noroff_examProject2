@@ -30,7 +30,7 @@ export function Calendar({ isLoading, isError, venue }) {
       };
 
       console.log(bookingData);
-      // Make sure to replace 'YOUR_BOOKING_ENDPOINT' with the actual booking endpoint
+
       const response = await PostData(
         `${ENDPOINTS.BOOKINGS}`,
         bookingData,
@@ -38,10 +38,8 @@ export function Calendar({ isLoading, isError, venue }) {
       );
       console.log("Booking created:", response);
       window.location.href = "/CustomerBookings";
-      // Handle success or perform necessary actions after creating the booking
     } catch (error) {
       console.error("Error creating booking:", error);
-      // Handle error
     }
   };
 

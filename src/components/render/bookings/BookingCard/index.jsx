@@ -10,12 +10,10 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { CardButtonAction } from "../../../CardButtonAction";
+import { BookingDates } from "../BookingDates";
 
 export default function BookingCard({ booking, buttons }) {
   const { id, dateFrom, dateTo, guests, venue, customer } = booking;
-
-  const formattedDateFrom = new Date(dateFrom).toLocaleDateString();
-  const formattedDateTo = new Date(dateTo).toLocaleDateString();
 
   const venueName = venue.name;
   const venueMedia = venue.media.length > 0 ? venue.media[0] : "";
@@ -65,7 +63,7 @@ export default function BookingCard({ booking, buttons }) {
             />
           </Box>
           <Stack pt={5} align={"center"}>
-            <Text color={"brand.darkBrick"} fontSize={"sm"}>
+            {/* <Text color={"brand.darkBrick"} fontSize={"sm"}>
               From: {formattedDateFrom}
             </Text>
             <Text color={"brand.darkBrick"} fontSize={"sm"}>
@@ -73,7 +71,8 @@ export default function BookingCard({ booking, buttons }) {
             </Text>
             <Text color={"brand.darkBrick"} fontSize={"sm"}>
               Guests: {guests}
-            </Text>
+            </Text> */}
+            <BookingDates dateFrom={dateFrom} dateTo={dateTo} guests={guests} />
             <Text
               textStyle={"playfair"}
               color={"brand.darkBrick"}

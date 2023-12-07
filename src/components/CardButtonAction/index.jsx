@@ -11,7 +11,7 @@ export async function CardButtonAction({ id, action }) {
     } else if (action === "edit") {
       window.location.href = `/UpdateVenue/${id}`;
     } else if (action === "ViewBookings") {
-      window.location.href = `/ManagerBookings`;
+      window.location.href = `/VenueBookings/${id}`;
     }
   } catch (error) {
     console.error("Error performing action:", error);
