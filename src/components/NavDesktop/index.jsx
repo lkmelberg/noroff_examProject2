@@ -14,7 +14,7 @@ export function NavDesktop() {
       return (
         <>
           <NavTab path="/" label="Venues" />
-          <NavTab path="/Bookings" label="Bookings" />
+          <NavTab path="/CustomerBookings" label="Bookings" />
           <NavTab path="/Profile" label="Profile" />
           <LogoutTab handleClick={handleLogoutClick} />
         </>
