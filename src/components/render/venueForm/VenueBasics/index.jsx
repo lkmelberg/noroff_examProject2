@@ -1,12 +1,12 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { formItemStyle } from "../Styling";
 
 export function VenueBasics({ values, handleInputChange }) {
   return (
     <Flex minW={"22rem"} gap={".3rem"} direction={"column"}>
       <div style={formItemStyle}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name(r)</label>
         <input
           id="name"
           name="name"
@@ -18,7 +18,7 @@ export function VenueBasics({ values, handleInputChange }) {
 
       {/* Description */}
       <div style={formItemStyle}>
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description">Description(r)</label>
         <textarea
           rows="5"
           id="description"
@@ -31,9 +31,10 @@ export function VenueBasics({ values, handleInputChange }) {
       {/* Image */}
       <div style={formItemStyle}>
         <label htmlFor="media">
-          Images URL
-          <br />
-          (seperate by comma)
+          Image URL{" "}
+          <Text textStyle={"tinyText"}>
+            (for multiple, seperate with comma)
+          </Text>
         </label>
 
         <textarea
@@ -47,7 +48,7 @@ export function VenueBasics({ values, handleInputChange }) {
 
       {/* Price */}
       <div style={formItemStyle}>
-        <label htmlFor="price">Price per night</label>
+        <label htmlFor="price">Price per night(r)</label>
         <input
           id="price"
           name="price"
@@ -60,7 +61,7 @@ export function VenueBasics({ values, handleInputChange }) {
 
       {/* Max Guests */}
       <div style={formItemStyle}>
-        <label htmlFor="maxGuests">Max Guests</label>
+        <label htmlFor="maxGuests">Max Guests(r)</label>
         <input
           id="maxGuests"
           name="maxGuests"

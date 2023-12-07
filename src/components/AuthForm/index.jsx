@@ -40,8 +40,6 @@ export default function AuthForm({
       localStorage.setItem("accessToken", accessToken);
 
       window.location.href = reloadTo;
-
-      // open modal if try works
     } catch (error) {
       console.error("Error submitting data:", error);
     }

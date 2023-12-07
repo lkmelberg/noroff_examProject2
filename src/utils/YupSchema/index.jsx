@@ -4,7 +4,7 @@ const commonSchema = {
   email: yup
     .string()
     .matches(
-      /^(?=.*\@)(?=.*\.noroff\.no?$|noroff\.no?$)/,
+      /^[\w\-.]+@(stud.)?noroff.no$/,
       "Email must be a valid stud.noroff.no or noroff.no email address"
     )
     .required("Please enter your email"),

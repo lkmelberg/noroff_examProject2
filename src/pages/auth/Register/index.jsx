@@ -7,7 +7,7 @@ export function Register() {
   const registerFields = {
     schema: YupSchemaRegister(),
     inputs: [
-      { id: "name", label: "First Name", type: "text" },
+      { id: "name", label: "Username", type: "text" },
       { id: "email", label: "Email address", type: "email" },
       { id: "password", label: "Password", type: "password" },
       { id: "avatar", label: "Avatar URL", type: "text" },
