@@ -7,6 +7,9 @@ import { VenueCheckboxes } from "../render/venueForm/VenueCheckboxes";
 import { validationSchema } from "../../utils/YupSchema";
 import * as yup from "yup";
 
+// Define a schema for validating URLs
+const urlSchema = yup.string().url("Please enter a valid URL");
+
 export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
   const [errors, setErrors] = useState({});
   const [formStatus, setFormStatus] = useState(null);
@@ -45,8 +48,16 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
 
   const validateField = async (fieldName, fieldValue) => {
     try {
-      await yup.reach(validationSchema, fieldName).validate(fieldValue);
-      setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: "" }));
+      // Validate the URL field if it's 'media'
+      if (fieldName === "media") {
+        const validations = await Promise.all(
+          fieldValue.map((url) => urlSchema.validate(url))
+        );
+        setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: [] }));
+      } else {
+        await yup.reach(validationSchema, fieldName).validate(fieldValue);
+        setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: "" }));
+      }
     } catch (error) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -63,6 +74,7 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
     if (name === "media") {
       const mediaArray = value.split(",").map((url) => url.trim());
       updatedValues = { ...updatedValues, [name]: mediaArray };
+      await validateField(name, mediaArray);
     } else if (type === "checkbox") {
       updatedValues = {
         ...updatedValues,
@@ -80,6 +92,7 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
           [locationField]: value,
         },
       };
+      await validateField(name, value);
     } else {
       updatedValues = {
         ...updatedValues,
@@ -117,7 +130,8 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
       )}
       {formStatus === "error" && (
         <Flex direction={"column"}>
-          Venue was not created/updated - epic fail
+          Venue was not created/updated - remember to fill inn the required
+          fields
         </Flex>
       )}
       <Flex
@@ -126,16 +140,8 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
         gap={"1rem"}
         width={"100%"}
         justifyContent={"space-between"}>
-        <VenueBasics
-          values={values}
-          // errors={errors}
-          handleInputChange={handleInputChange}
-        />
-        <VenueLocation
-          values={values}
-          // errors={errors}
-          handleInputChange={handleInputChange}
-        />
+        <VenueBasics values={values} handleInputChange={handleInputChange} />
+        <VenueLocation values={values} handleInputChange={handleInputChange} />
       </Flex>
       <Flex
         alignItems={"center"}
@@ -157,13 +163,15 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
         {Object.keys(errors).map((fieldName) => (
           <FormControl key={fieldName} isInvalid={!!errors[fieldName]}>
             <FormErrorMessage
-              fontSize="md" // Change font size
-              color="brand.beige" // Change text color
+              fontSize="md"
+              color="brand.beige"
               mt={1}
-              textDecoration="underline" // Add underline to the text
+              textDecoration="underline"
               textDecorationColor="red">
               Errors you must fix before you can continue: <br />
-              {errors[fieldName]}
+              {Array.isArray(errors[fieldName])
+                ? errors[fieldName].join(", ")
+                : errors[fieldName]}
             </FormErrorMessage>
           </FormControl>
         ))}

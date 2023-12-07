@@ -24,6 +24,9 @@ export function CreateVenue() {
       padding={"1rem"}
       gap={"1rem"}>
       <Text textStyle={"playfair"}>Create Venue</Text>
+      <Text textStyle={"lato"}>
+        Create your venue. fields marked (r) must be filled in
+      </Text>
       <VenueForm onSubmitForm={handleSubmit} buttonText="Create Venue" />
     </Flex>
   );
