@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useParams } from "react-router-dom";
 import { Input, Button } from "@chakra-ui/react"; // Import your UI library components
 import { PostData } from "../../utils/api/Data";
 import ENDPOINTS from "../../utils/api/endpoints"; // Import API endpoints
@@ -11,6 +12,7 @@ export function Calendar({ isLoading, isError, venue }) {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
   const [guests, setGuests] = useState(0);
+  let { id } = useParams();
 
   const onChange = (dates) => {
     const [start, end] = dates;
@@ -19,7 +21,6 @@ export function Calendar({ isLoading, isError, venue }) {
   };
 
   const handleCreateBooking = async () => {
-    const accessToken = token;
     try {
       const bookingData = {
         dateFrom: startDate.toISOString(),
@@ -31,9 +32,9 @@ export function Calendar({ isLoading, isError, venue }) {
       console.log(bookingData);
       // Make sure to replace 'YOUR_BOOKING_ENDPOINT' with the actual booking endpoint
       const response = await PostData(
-        ENDPOINTS.BOOKINGS,
+        `${ENDPOINTS.BOOKINGS}`,
         bookingData,
-        accessToken
+        token
       );
       console.log("Booking created:", response);
       window.location.href = "/CustomerBookings";

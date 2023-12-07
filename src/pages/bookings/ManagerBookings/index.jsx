@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 Link;
 import { BookingListRender } from "../../../components/render/bookings/BookingListRender";
@@ -8,11 +8,14 @@ import { UseFetchedData } from "../../../utils/api/UseFetchedData";
 import { token } from "../../../utils/Variables";
 
 export function ManagerBookings() {
+  let { id } = useParams();
+  const endpoint = `${ENDPOINTS.BOOKINGS}`;
+
   const {
     data: bookings,
     isLoading,
     isError,
-  } = UseFetchedData(ENDPOINTS.PROFILE_BOOKINGS, token);
+  } = UseFetchedData(endpoint, token);
 
   return (
     <BookingListRender

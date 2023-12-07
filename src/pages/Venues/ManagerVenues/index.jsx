@@ -28,6 +28,7 @@ export function ManagerVenues() {
         buttons={[
           { action: "edit", label: "Edit Venue" },
           { action: "delete", label: "Delete Venue" },
+          { action: "ViewBookings", label: "View Bookings" },
         ]}
       />
     </Flex>

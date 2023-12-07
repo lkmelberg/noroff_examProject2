@@ -8,7 +8,7 @@ import { VenueList } from "./pages/Venues/VenueList";
 import { Venue } from "./pages/Venues/Venue";
 import { CreateVenue } from "./pages/Venues/CreateVenue";
 import { UpdateVenue } from "./pages/UpdateVenue";
-import { ManagerVenues } from "./pages/Venues/ManagerVenues";
+import { ManagerVenues } from "./pages/venues/ManagerVenues";
 
 // bookings
 import { BookingConfirm } from "./pages/bookings/BookingConfirm";
@@ -31,9 +31,9 @@ function App() {
           <Route index element={<VenueList />} />
           <Route path="venues/:id" element={<Venue />} />
           <Route path="CreateVenue" element={<CreateVenue />} />
-          <Route path="UpdateVenue" element={<UpdateVenue />} />
+          <Route path="UpdateVenue/:id" element={<UpdateVenue />} />
           <Route path="ManagerVenues" element={<ManagerVenues />} />
-          <Route path="ManagerBookings" element={<ManagerBookings />} />
+          <Route path="ManagerBookings/:id" element={<ManagerBookings />} />
           <Route path="Profile" element={<Profile />} />
           <Route path="EditAvatar" element={<EditAvatar />} />
           <Route path="BookingConfirm" element={<BookingConfirm />} />
