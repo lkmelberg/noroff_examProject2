@@ -1,11 +1,27 @@
 # Exam Project 2 - Noroff VOC
 
+This is my exam project for my frontend degree from Noroff :)
+
 ## Links to the project deliveries
 
-Hosted Site: https://precious-custard-c580bd.netlify.app/
-Gantt Chart:
-Designs And Styleguide:
-Kanban Board:
+#### Hosted Site:
+
+<https://precious-custard-c580bd.netlify.app/>
+
+#### Gantt Chart:
+
+- select month or quarter for better view
+- each sprint has to do items
+  <https://trello.com/b/S4ZHKzvC/melbergexamproject2/timeline>
+
+#### Designs And Styleguide:
+
+<https://www.figma.com/file/dWhcG7aTMz25GFR9qSA2c1/ExamProject2---Holidaze?type=design&node-id=0%3A1&mode=design&t=EV1Ljrws6VRm1KUu-1>
+
+#### Kanban Board:
+
+- click on the sprints to see sprint tasks
+  <https://trello.com/b/S4ZHKzvC/melbergexamproject2>
 
 ## Project Brief
 
