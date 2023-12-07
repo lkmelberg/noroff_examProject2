@@ -61,7 +61,10 @@ export function NavMobile() {
                   <Link to="/" label="Venues" onClick={closeDrawer}>
                     Venues
                   </Link>
-                  <Link to="/Bookings" label="Bookings" onClick={closeDrawer}>
+                  <Link
+                    to="/CustomerBookings"
+                    label="Bookings"
+                    onClick={closeDrawer}>
                     Bookings
                   </Link>
                   <Link to="/Profile" label="My Profile" onClick={closeDrawer}>
