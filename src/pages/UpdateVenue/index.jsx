@@ -5,11 +5,11 @@ import React from "react";
 
 // import { VenueForm } from "../../../components/VenueForm";
 // import ENDPOINTS from "../../../utils/api/endpoints";
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 // import { token } from "../../../utils/Variables";
 // import { FetchInitialValues } from "../../../components/FetchInitialValues";
 
-export function PutVenue() {
+export function UpdateVenue() {
   // let { id } = useParams(); // Extract the 'id' from URL params
   // console.log(id);
   // const [initialValues, setInitialValues] = useState(null);
@@ -47,17 +47,7 @@ export function PutVenue() {
       direction={"column"}
       padding={"1rem"}
       gap={"1rem"}>
-      <Text textStyle={"playfair"}>Update Venue</Text>
-      {/* {initialValues ? (
-        <VenueForm
-          initialValues={initialValues}
-          onSubmitForm={handleSubmit}
-          // method="PUT"
-          buttonText="Update Venue"
-        />
-      ) : (
-        <p>Loading initial values...</p>
-      )} */}
+      <p>hellp</p>
     </Flex>
   );
 }
