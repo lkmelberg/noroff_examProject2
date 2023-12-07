@@ -2,10 +2,10 @@ import React from "react";
 import { Button, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 Link;
-import { VenueListRender } from "../../../components/render/venue/VenueListRender";
-import ENDPOINTS from "../../../utils/api/endpoints";
-import { UseFetchedData } from "../../../utils/api/UseFetchedData";
-import { token } from "../../../utils/Variables";
+import { VenueListRender } from "../../components/render/venue/VenueListRender";
+import ENDPOINTS from "../../utils/api/endpoints";
+import { UseFetchedData } from "../../utils/api/UseFetchedData";
+import { token } from "../../utils/Variables";
 
 export function ManagerVenues() {
   const {
@@ -28,6 +28,7 @@ export function ManagerVenues() {
         buttons={[
           { action: "edit", label: "Edit Venue" },
           { action: "delete", label: "Delete Venue" },
+          { action: "ViewBookings", label: "View Bookings" },
         ]}
       />
     </Flex>

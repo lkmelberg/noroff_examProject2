@@ -10,6 +10,8 @@ export async function CardButtonAction({ id, action }) {
       await DeleteData(`${ENDPOINTS.VENUES}/${id}`, token);
     } else if (action === "edit") {
       window.location.href = `/UpdateVenue/${id}`;
+    } else if (action === "ViewBookings") {
+      window.location.href = `/VenueBookings/${id}`;
     }
   } catch (error) {
     console.error("Error performing action:", error);

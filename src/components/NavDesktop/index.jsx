@@ -23,7 +23,6 @@ export function NavDesktop() {
     if (isManager) {
       return (
         <>
-          <NavTab path="/Bookings" label="Bookings" />
           <NavTab path="/ManagerVenues" label="Properties" />
           <NavTab path="/Profile" label="Profile" />
           <LogoutTab handleClick={handleLogoutClick} />

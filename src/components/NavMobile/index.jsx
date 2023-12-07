@@ -75,12 +75,6 @@ export function NavMobile() {
               {isManager && (
                 <>
                   <Link
-                    to="/ManagerBookings"
-                    label="Bookings"
-                    onClick={closeDrawer}>
-                    Bookings
-                  </Link>
-                  <Link
                     to="/ManagerVenues"
                     label="Properties"
                     onClick={closeDrawer}>
