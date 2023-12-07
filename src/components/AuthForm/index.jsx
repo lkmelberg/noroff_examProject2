@@ -64,7 +64,7 @@ export default function AuthForm({
         setShowPassword={setShowPassword}
       />
       <Text textStyle={"bodyText"}>
-        Please remember that email and password are both case seneitive
+        Please remember that email and password are both case sensitive
       </Text>
       <SubmitButton
         buttonText={buttonText}
