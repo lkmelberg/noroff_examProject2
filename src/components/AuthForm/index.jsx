@@ -16,6 +16,7 @@ export default function AuthForm({
   switchText,
   switchLink,
   switchLinkText,
+  reloadTo,
 }) {
   const {
     register,
@@ -38,7 +39,9 @@ export default function AuthForm({
       localStorage.setItem("isManager", venueManager);
       localStorage.setItem("accessToken", accessToken);
 
-      window.location.href = "/Profile";
+      window.location.href = reloadTo;
+
+      // open modal if try works
     } catch (error) {
       console.error("Error submitting data:", error);
     }

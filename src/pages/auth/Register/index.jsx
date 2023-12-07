@@ -21,8 +21,9 @@ export function Register() {
       title="Create your account"
       buttonText="Create account"
       switchText="Already have an account?"
-      switchLink="../Login"
+      switchLink="/Login"
       switchLinkText="Login"
+      reloadTo="/Login"
     />
   );
 }
