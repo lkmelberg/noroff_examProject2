@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useParams } from "react-router-dom";
-import { Input, Button } from "@chakra-ui/react"; // Import your UI library components
+import { Input, Button, Text, Flex } from "@chakra-ui/react";
 import { PostData } from "../../utils/api/Data";
-import ENDPOINTS from "../../utils/api/endpoints"; // Import API endpoints
+import ENDPOINTS from "../../utils/api/endpoints";
 import { isCustomer, token } from "../../utils/Variables";
 
-export function Calendar({ isLoading, isError, venue }) {
+export function BookingCalendar({ isLoading, isError, venue }) {
   const [disabledDates, setDisabledDates] = useState([]);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
@@ -66,7 +66,7 @@ export function Calendar({ isLoading, isError, venue }) {
   }, [venue]);
 
   return (
-    <div>
+    <Flex justifyContent={"center"} gap={"1rem"} padding={"1rem"} wrap={"wrap"}>
       {isLoading ? (
         <p>Loading...</p>
       ) : isError ? (
@@ -85,22 +85,29 @@ export function Calendar({ isLoading, isError, venue }) {
           />
 
           {isCustomer && (
-            <>
+            <Flex alignItems={"center"} direction={"column"}>
+              <Text textStyle={"lato"}>Number of Guests (required)</Text>
               <Input
+                width={"5rem"}
+                borderColor={"brand.beige"}
                 type="number"
-                placeholder="Number of guests"
                 min="1"
                 value={guests}
                 onChange={(e) => setGuests(parseInt(e.target.value))}
                 marginBottom="1rem"
               />
-              <Button colorScheme="teal" onClick={handleCreateBooking}>
+              <Button variant="second" onClick={handleCreateBooking}>
                 Create Booking
               </Button>
-            </>
+            </Flex>
           )}
         </>
       )}
-    </div>
+      {!isCustomer && !isLoading && !isError && (
+        <Text textStyle={"lato"}>
+          To make a booking, please log in to your customer account.
+        </Text>
+      )}
+    </Flex>
   );
 }

@@ -41,7 +41,7 @@ export const theme = extendTheme({
           bg: "brand.beige",
           color: "brand.darkBrick",
           height: "2.5rem",
-          width: "7.5rem",
+          width: "8rem",
         },
       },
     },

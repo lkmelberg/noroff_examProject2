@@ -58,15 +58,22 @@ export function EditAvatar() {
         justifyContent={"center"}
         margin={"2rem"}
         gap={"1rem"}>
-        <Text textStyle={"playfair"}>Welcome {name}</Text>
+        <Text textStyle={"playfair"}>Hi {name}</Text>
+        <Text textStyle={"lato"}>
+          Edit your avatar by pasting an image URL in the input field below
+        </Text>
         <Avatar size="10rem" border={("2rem", "solid")}></Avatar>
         <Input
+          borderColor={"brand.beige"}
           type="text"
+          _placeholder={{ opacity: 0.9, color: "brand.beige" }}
           placeholder="Enter Avatar URL"
           value={avatarUrl}
           onChange={handleInputChange}
         />
-        <Button onClick={handleUpdateAvatar}>Update Avatar</Button>
+        <Button variant={"second"} onClick={handleUpdateAvatar}>
+          Update Avatar
+        </Button>
         {errorMessage && <FormErrorMessage>{errorMessage}</FormErrorMessage>}
         {responseMessage && <Text>{responseMessage}</Text>}
       </Flex>

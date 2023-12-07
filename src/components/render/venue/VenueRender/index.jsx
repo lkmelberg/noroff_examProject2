@@ -29,7 +29,7 @@ export function VenueRender({ isLoading, isError, venue }) {
         <p>Error fetching data</p>
       ) : (
         //   main cont
-        <Flex direction={"column"} margin={"2rem"}>
+        <Flex alignItems={"center"} direction={"column"} margin={"2rem"}>
           {/* header cont */}
           <Text as={"h1"} textStyle={"playfair"} pb={3} color="brand.beige">
             {name}
@@ -43,6 +43,7 @@ export function VenueRender({ isLoading, isError, venue }) {
                 <Image
                   key={index}
                   src={image}
+                  objectFit="cover"
                   alt={`Image ${index}`}
                   boxSize="10rem"
                   m="2"
