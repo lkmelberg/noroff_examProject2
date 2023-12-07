@@ -19,6 +19,11 @@ export const theme = extendTheme({
       fontWeight: "regular",
       fontFamily: `'Open Sans Variable', sans-serif`,
     },
+    tinyText: {
+      fontSize: ".6em",
+      fontWeight: "regular",
+      fontFamily: `'Open Sans Variable', sans-serif`,
+    },
   },
   colors: {
     brand: {

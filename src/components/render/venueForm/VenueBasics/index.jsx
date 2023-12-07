@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { formItemStyle } from "../Styling";
 
 export function VenueBasics({ values, handleInputChange }) {
@@ -30,7 +30,12 @@ export function VenueBasics({ values, handleInputChange }) {
 
       {/* Image */}
       <div style={formItemStyle}>
-        <label htmlFor="media">Image URL</label>
+        <label htmlFor="media">
+          Image URL{" "}
+          <Text textStyle={"tinyText"}>
+            (for multiple, seperate with comma)
+          </Text>
+        </label>
 
         <textarea
           rows="5"
