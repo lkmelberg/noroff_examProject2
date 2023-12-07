@@ -26,6 +26,11 @@ export default function AuthForm({
     resolver: yupResolver(fields.schema),
   });
 
+  const handleEmailChange = (e) => {
+    const lowercaseEmail = e.target.value.toLowerCase();
+    setValue("email", lowercaseEmail);
+  };
+
   const onSubmit = async (data) => {
     console.log(data);
     try {

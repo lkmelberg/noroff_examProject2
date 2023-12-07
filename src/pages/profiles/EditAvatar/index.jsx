@@ -35,7 +35,6 @@ export function EditAvatar() {
       };
 
       const response = await UpdateData(ENDPOINTS.AVATAR, body, token);
-      console.log("Response from PUT request:", response);
 
       setErrorMessage("");
       setResponseMessage("Avatar updated successfully, please wait");

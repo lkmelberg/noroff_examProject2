@@ -13,7 +13,7 @@ export function UseFetchedData(endpoint, accessToken = null) {
 
       try {
         const fetchedData = await FetchData(endpoint, "GET", {}, accessToken);
-        console.log(fetchedData);
+
         setData(fetchedData);
       } catch (error) {
         setIsError(true);

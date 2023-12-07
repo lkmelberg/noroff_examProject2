@@ -6,10 +6,8 @@ import { PostData } from "../../../utils/api/Data";
 import { token } from "../../../utils/Variables";
 
 const handleSubmit = async (values) => {
-  console.log(values);
   try {
     const response = await PostData(ENDPOINTS.VENUES, values, token);
-    console.log(response);
   } catch (error) {
     console.log("error");
   }

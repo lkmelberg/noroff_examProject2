@@ -21,7 +21,7 @@ export async function FetchData(
 
   try {
     const response = await fetch(endpoint, requestOptions);
-    console.log("Response:", response);
+
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -36,7 +36,7 @@ export async function FetchData(
 export async function PostData(endpoint, data, accessToken) {
   try {
     const response = await FetchData(endpoint, "POST", data, accessToken);
-    console.log("Response:", response);
+
     return response;
   } catch (error) {
     console.error("Error creating venue:", error);
@@ -47,7 +47,7 @@ export async function PostData(endpoint, data, accessToken) {
 export async function UpdateData(endpoint, data, accessToken) {
   try {
     const response = await FetchData(endpoint, "PUT", data, accessToken);
-    console.log("Response:", response);
+
     return response;
   } catch (error) {
     console.error("Error updating data:", error);
@@ -58,7 +58,7 @@ export async function UpdateData(endpoint, data, accessToken) {
 export async function DeleteData(endpoint, accessToken) {
   try {
     const response = await FetchData(endpoint, "DELETE", null, accessToken);
-    console.log("Response:", response);
+
     window.location.reload();
     return response;
   } catch (error) {

@@ -41,7 +41,7 @@ export function BookingCalendar({ isLoading, isError, venue }) {
     } catch (error) {
       console.error("Error creating booking:", error);
       setBookingError(
-        "Failed to create booking. Please try again. Remeber to select dates and number of guests"
+        "Failed to create booking. Please try again. Remeber to select dates and number of guests. Check that you are not adding more guests than allowed :)"
       );
     }
   };
