@@ -7,19 +7,9 @@ export function Login() {
   const loginFields = {
     schema: YupSchemaLogin(),
     inputs: [
-      {
-        id: "email",
-        label: "Email address",
-        type: "email",
-        onChange: handleEmailChange,
-      },
+      { id: "email", label: "Email address", type: "email" },
       { id: "password", label: "Password", type: "password" },
     ],
-  };
-
-  const handleEmailChange = (e) => {
-    const lowercaseEmail = e.target.value.toLowerCase();
-    setValue("email", lowercaseEmail);
   };
 
   return (
