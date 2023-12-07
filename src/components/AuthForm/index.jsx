@@ -7,6 +7,7 @@ import FormContainer from "../render/form/FormContainer";
 import { FormHeader } from "../render/form/FormHeader";
 import { FormInputs } from "../render/form/FormInputs";
 import { SubmitButton } from "../render/form/SubmitButton";
+import { Text } from "@chakra-ui/react";
 
 export default function AuthForm({
   endpoint,
@@ -25,11 +26,6 @@ export default function AuthForm({
   } = useForm({
     resolver: yupResolver(fields.schema),
   });
-
-  const handleEmailChange = (e) => {
-    const lowercaseEmail = e.target.value.toLowerCase();
-    setValue("email", lowercaseEmail);
-  };
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -67,6 +63,9 @@ export default function AuthForm({
         showPassword={showPassword}
         setShowPassword={setShowPassword}
       />
+      <Text textStyle={"bodyText"}>
+        Please remember that email and password are both case seneitive
+      </Text>
       <SubmitButton
         buttonText={buttonText}
         handleSubmit={handleSubmit(onSubmit)}
