@@ -31,9 +31,9 @@ function App() {
           <Route index element={<VenueList />} />
           <Route path="venues/:id" element={<Venue />} />
           <Route path="CreateVenue" element={<CreateVenue />} />
-          <Route path="UpdateVenue/:id" element={<UpdateVenue />} />
+          <Route path="UpdateVenue" element={<UpdateVenue />} />
           <Route path="ManagerVenues" element={<ManagerVenues />} />
-          <Route path="ManagerBookingss" element={<ManagerBookings />} />
+          <Route path="ManagerBookings" element={<ManagerBookings />} />
           <Route path="Profile" element={<Profile />} />
           <Route path="EditAvatar" element={<EditAvatar />} />
           <Route path="BookingConfirm" element={<BookingConfirm />} />
