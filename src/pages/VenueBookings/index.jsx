@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 Link;
 
-import ENDPOINTS from "../../../utils/api/endpoints";
-import { UseFetchedData } from "../../../utils/api/UseFetchedData";
-import { VenueBookingsRender } from "../../../components/render/bookings/VenueBookingsList";
-// import { token } from "../../../utils/Variables";
+import ENDPOINTS from "../../utils/api/endpoints";
+import { UseFetchedData } from "../../utils/api/UseFetchedData";
+import { VenueBookingsRender } from "../../components/render/bookings/VenueBookingsList";
 
 export function VenueBookings() {
   let { id } = useParams();

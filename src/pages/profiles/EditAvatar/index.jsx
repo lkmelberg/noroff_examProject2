@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Flex, Button, Text, Input, FormErrorMessage } from "@chakra-ui/react";
+import { Flex, Button, Text, Input } from "@chakra-ui/react";
 import { UpdateData } from "../../../utils/api/Data";
 import { Avatar } from "../../../components/Avatar";
 import ENDPOINTS from "../../../utils/api/endpoints";
 import { name, token } from "../../../utils/Variables";
+import * as yup from "yup";
 
 export function EditAvatar() {
   const [avatarUrl, setAvatarUrl] = useState("");
@@ -12,10 +13,18 @@ export function EditAvatar() {
 
   const handleInputChange = (event) => {
     setAvatarUrl(event.target.value);
+    setErrorMessage("");
+    setResponseMessage("");
   };
 
   const handleUpdateAvatar = async () => {
-    if (!isURLValid(avatarUrl)) {
+    try {
+      await yup
+        .string()
+        .url()
+        .required("Avatar URL cannot be empty")
+        .validate(avatarUrl);
+    } catch (error) {
       setErrorMessage("Invalid URL. Please provide a valid URL.");
       return;
     }
@@ -26,13 +35,10 @@ export function EditAvatar() {
       };
 
       const response = await UpdateData(ENDPOINTS.AVATAR, body, token);
-
-      // Log the response from the request
       console.log("Response from PUT request:", response);
 
-      // If update is successful, clear error message
       setErrorMessage("");
-      setResponseMessage("Avatar updated successfully");
+      setResponseMessage("Avatar updated successfully, please wait");
       localStorage.setItem("avatar", avatarUrl);
       setTimeout(function () {
         location.reload();
@@ -41,13 +47,6 @@ export function EditAvatar() {
       console.error("Error updating avatar:", error);
       setResponseMessage("");
     }
-  };
-
-  // Function to validate URL
-  const isURLValid = (url) => {
-    // Basic URL validation regex
-    const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
-    return urlPattern.test(url);
   };
 
   return (
@@ -74,7 +73,16 @@ export function EditAvatar() {
         <Button variant={"second"} onClick={handleUpdateAvatar}>
           Update Avatar
         </Button>
-        {errorMessage && <FormErrorMessage>{errorMessage}</FormErrorMessage>}
+        {errorMessage && (
+          <Text
+            fontSize="md"
+            color="brand.beige"
+            mt={1}
+            textDecoration="underline"
+            textDecorationColor="red">
+            {errorMessage}
+          </Text>
+        )}
         {responseMessage && <Text>{responseMessage}</Text>}
       </Flex>
     </>

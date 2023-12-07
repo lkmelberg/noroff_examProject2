@@ -1,4 +1,3 @@
-// BookingCard.jsx
 import React from "react";
 import {
   Box,
@@ -63,15 +62,6 @@ export default function BookingCard({ booking, buttons }) {
             />
           </Box>
           <Stack pt={5} align={"center"}>
-            {/* <Text color={"brand.darkBrick"} fontSize={"sm"}>
-              From: {formattedDateFrom}
-            </Text>
-            <Text color={"brand.darkBrick"} fontSize={"sm"}>
-              To: {formattedDateTo}
-            </Text>
-            <Text color={"brand.darkBrick"} fontSize={"sm"}>
-              Guests: {guests}
-            </Text> */}
             <BookingDates dateFrom={dateFrom} dateTo={dateTo} guests={guests} />
             <Text
               textStyle={"playfair"}

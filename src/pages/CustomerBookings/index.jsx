@@ -1,11 +1,11 @@
 import React from "react";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 Link;
-import { BookingListRender } from "../../../components/render/bookings/BookingListRender";
-import ENDPOINTS from "../../../utils/api/endpoints";
-import { UseFetchedData } from "../../../utils/api/UseFetchedData";
-import { token } from "../../../utils/Variables";
+import BookingListRender from "../../components/render/bookings/BookingListRender";
+import ENDPOINTS from "../../utils/api/endpoints";
+import { UseFetchedData } from "../../utils/api/UseFetchedData";
+import { token } from "../../utils/Variables";
 
 export function CustomerBookings() {
   const {

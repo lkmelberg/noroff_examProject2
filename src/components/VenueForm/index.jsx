@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { validationSchema } from "../../utils/YupSchema";
-import { Button, Flex } from "@chakra-ui/react";
+import { Button, Flex, FormControl, FormErrorMessage } from "@chakra-ui/react";
 import { formStyle } from "../render/venueForm/Styling";
 import { VenueBasics } from "../render/venueForm/VenueBasics";
 import { VenueLocation } from "../render/venueForm/VenueLocation";
 import { VenueCheckboxes } from "../render/venueForm/VenueCheckboxes";
+import { validationSchema } from "../../utils/YupSchema";
+import * as yup from "yup";
 
 export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
   const [errors, setErrors] = useState({});
@@ -42,35 +43,53 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
     }
   }, [initialValues]);
 
-  const handleInputChange = (event) => {
+  const validateField = async (fieldName, fieldValue) => {
+    try {
+      await yup.reach(validationSchema, fieldName).validate(fieldValue);
+      setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: "" }));
+    } catch (error) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldName]: error.message,
+      }));
+    }
+  };
+
+  const handleInputChange = async (event) => {
     const { name, value, type, checked } = event.target;
+
+    let updatedValues = { ...values };
 
     if (name === "media") {
       const mediaArray = value.split(",").map((url) => url.trim());
-      setValues({ ...values, [name]: mediaArray });
+      updatedValues = { ...updatedValues, [name]: mediaArray };
     } else if (type === "checkbox") {
-      setValues({
-        ...values,
+      updatedValues = {
+        ...updatedValues,
         meta: {
-          ...values.meta,
+          ...updatedValues.meta,
           [name]: checked,
         },
-      });
+      };
     } else if (name.startsWith("location.")) {
       const locationField = name.split("location.")[1];
-      setValues({
-        ...values,
+      updatedValues = {
+        ...updatedValues,
         location: {
-          ...values.location,
+          ...updatedValues.location,
           [locationField]: value,
         },
-      });
+      };
     } else {
-      setValues({
-        ...values,
+      updatedValues = {
+        ...updatedValues,
         [name]: type === "number" ? parseInt(value, 10) : value,
-      });
+      };
+
+      await validateField(name, value);
     }
+
+    setValues(updatedValues);
   };
 
   const handleSubmit = async (event) => {
@@ -79,10 +98,10 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
       await validationSchema.validate(values, { abortEarly: false });
       if (onSubmitForm) {
         onSubmitForm(values);
-        setErrors("");
-        setFormStatus("success ");
+        setErrors({});
+        setFormStatus("success");
         setTimeout(function () {
-          location.reload();
+          window.location.href = "/ManagerVenues";
         }, 2500);
       }
     } catch (error) {
@@ -90,10 +109,17 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
       setFormStatus("error");
     }
   };
+
   return (
     <form onSubmit={handleSubmit} style={formStyle}>
-      {formStatus === "success" && <Flex direction={"column"}>Success!</Flex>}
-      {formStatus === "error" && <div>Venue was not created - epic fail</div>}
+      {formStatus === "success" && (
+        <Flex direction={"column"}>Success! Please Wait for redirect</Flex>
+      )}
+      {formStatus === "error" && (
+        <Flex direction={"column"}>
+          Venue was not created/updated - epic fail
+        </Flex>
+      )}
       <Flex
         alignItems={"flex-start"}
         wrap={"wrap"}
@@ -102,12 +128,12 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
         justifyContent={"space-between"}>
         <VenueBasics
           values={values}
-          errors={errors}
+          // errors={errors}
           handleInputChange={handleInputChange}
         />
         <VenueLocation
           values={values}
-          errors={errors}
+          // errors={errors}
           handleInputChange={handleInputChange}
         />
       </Flex>
@@ -124,6 +150,23 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
         <Button variant={"second"} type="submit">
           {buttonText}
         </Button>
+      </Flex>
+
+      {/* Displaying form validation errors */}
+      <Flex direction="column">
+        {Object.keys(errors).map((fieldName) => (
+          <FormControl key={fieldName} isInvalid={!!errors[fieldName]}>
+            <FormErrorMessage
+              fontSize="md" // Change font size
+              color="brand.beige" // Change text color
+              mt={1}
+              textDecoration="underline" // Add underline to the text
+              textDecorationColor="red">
+              Errors you must fix before you can continue: <br />
+              {errors[fieldName]}
+            </FormErrorMessage>
+          </FormControl>
+        ))}
       </Flex>
     </form>
   );

@@ -28,7 +28,14 @@ export function FormInputs({
               inputId={input.id}
             />
           )}
-          <Text color="red">{errors[input.id]?.message}</Text>
+          <Text
+            fontSize="md"
+            color="brand.beige"
+            mt={1}
+            textDecoration="underline"
+            textDecorationColor="red">
+            {errors[input.id]?.message}
+          </Text>
         </FormControl>
       ))}
     </form>

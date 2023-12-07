@@ -11,9 +11,8 @@ import { UpdateVenue } from "./pages/UpdateVenue";
 import { ManagerVenues } from "./pages/ManagerVenues";
 
 // bookings
-import { CustomerBookings } from "./pages/bookings/CustomerBookings";
-import { VenueBookings } from "./pages/bookings/VenueBookings";
-
+import { CustomerBookings } from "./pages/CustomerBookings";
+import { VenueBookings } from "./pages/VenueBookings";
 // profile
 import { Profile } from "./pages/profiles/Profile";
 import { EditAvatar } from "./pages/profiles/EditAvatar";

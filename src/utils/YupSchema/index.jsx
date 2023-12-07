@@ -57,19 +57,4 @@ export const validationSchema = yup.object({
     .number()
     .min(0, "Rating must be at least 0")
     .max(5, "Rating cannot exceed 5"),
-
-  media: yup.array().of(yup.string().url("Please enter a valid URL")),
-
-  "meta.wifi": yup.boolean(),
-  "meta.parking": yup.boolean(),
-  "meta.breakfast": yup.boolean(),
-  "meta.pets": yup.boolean(),
-
-  "location.address": yup.string(),
-  "location.city": yup.string(),
-  "location.zip": yup.string(),
-  "location.country": yup.string(),
-  "location.continent": yup.string(),
-  "location.lat": yup.number(),
-  "location.lng": yup.number(),
 });
