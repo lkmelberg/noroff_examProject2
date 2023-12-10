@@ -1,6 +1,8 @@
-# Exam Project 2 - Noroff VOC
+# Exam Project 2 - Holidaze - Noroff VOC
 
-This is my exam project for my frontend degree from Noroff :)
+This is my final exam project for my frontend degree from Noroff :)
+
+  <img src="/src/assets/preview.png"  />
 
 ## Links to the project deliveries
 
@@ -23,9 +25,9 @@ This is my exam project for my frontend degree from Noroff :)
 - click on the sprints to see sprint tasks
   <https://trello.com/b/S4ZHKzvC/melbergexamproject2>
 
-## Project Brief
+## Project Brief / Description
 
-# Goal
+### Goal
 
 To take the skills learned over the last two years and take on an extensive project where the finished product should reflect the candidate’s general development capabilities, in addition to visual and technical skills.
 Brief
@@ -37,16 +39,16 @@ Requirements
 
     All API functionality is managed by an existing application. This project only covers the front-end application for the API.
 
-# API
+### API
 
 The API you are using for this project can be found under Holidaze in the Noroff API documentation.
 
-# Resources
+### Resources
 
 API Guide API Documentation - https://docs.noroff.dev/
 User Stories - https://api.noroff.dev/docs/static/index.html
 
-# The client has specified the following requirements in the form of User Stories:
+### The client has specified the following requirements in the form of User Stories:
 
     A user may view a list of Venues
     A user may search for a specific Venue
@@ -62,11 +64,11 @@ User Stories - https://api.noroff.dev/docs/static/index.html
     A registered Venue manager may view bookings for a Venue they manage
     A registered user may login
     A registered user may update their avatar
-    A registered user may logout
+    A registered user may logOut
 
-## Technical Restrictions
+### Technical Restrictions
 
-# The company CTO has set the following technical restrictions:
+#### The company CTO has set the following technical restrictions:
 
     Must use an approved JavaScript Framework
     Must use an approved CSS Framework
@@ -74,9 +76,9 @@ User Stories - https://api.noroff.dev/docs/static/index.html
     Must use an approved Design Application
     Must use an approved Planning Application
 
-## Required Links
+### Required Links
 
-# The Product Owner has requested links to the following:
+#### The Product Owner has requested links to the following:
 
     A Gantt chart for project timing
     A design prototype
@@ -85,15 +87,15 @@ User Stories - https://api.noroff.dev/docs/static/index.html
     A repository link
     A hosted application demo link
 
-## Approved Resources
+### Approved Resources
 
 This list covers libraries and services that have been vetted by the company and approved for use.
 
-# JavaScript Frameworks
+#### JavaScript Frameworks
 
     React (>16)
 
-# CSS Frameworks
+#### CSS Frameworks
 
     Bootstrap (>5)
     Tailwind (>3)
@@ -101,26 +103,67 @@ This list covers libraries and services that have been vetted by the company and
     Styled Components
     CSS Modules
 
-# Hosting Services
+#### Hosting Services
 
     GitHub Pages
     Netlify
 
-# Design Applications
+#### Design Applications
 
     Adobe XD
     Figma
     Sketch
 
-# Planning Applications
+#### Planning Applications
 
     Trello
     GitHub Projects
 
-# Delivery
+### Delivery
 
 Include the required links in the Moodle delivery window using this template format.
 
 All final changes must be merged into the default branch main or master. Other branches will not be checked.
 
 Ensure that the readme.md file describes your project thoroughly, including how to setup and run the project locally and any special instructions for testers.
+
+## Built With
+
+- [React.js](https://reactjs.org/)
+- [Vite.js](https://vitejs.dev/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Yup Validation](https://github.com/jquense/yup)
+
+### Installing
+
+To open the repo on your local machine:
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com:lkmelberg/noroff_examProject2.git
+```
+
+2. Install the dependencies:
+
+```
+npm install
+```
+
+### Running
+
+To run the app, run the following commands:
+
+```bash
+npm run dev
+```
+
+## Contributing
+
+If you would like to contribute, please create a new branch and create a pull request with your changes.
+
+## Contact
+
+You can reach me here:
+
+[My LinkedIn page](https://www.linkedin.com/in/linn-melberg-5788a11b6/)

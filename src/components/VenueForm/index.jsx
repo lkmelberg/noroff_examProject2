@@ -92,7 +92,7 @@ export function VenueForm({ initialValues, onSubmitForm, buttonText }) {
           [locationField]: value,
         },
       };
-      await validateField(name, value);
+      // await validateField(name, value);
     } else {
       updatedValues = {
         ...updatedValues,

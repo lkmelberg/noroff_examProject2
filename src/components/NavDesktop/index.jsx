@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Tabs, TabList, Tab } from "@chakra-ui/react";
-import { NavTab, LogoutTab } from "../NavTab";
-import { isCustomer, isManager } from "../../utils/Variables";
-import { LogOut } from "../../utils/profile/LogOut";
+import React from "react";
+import { Tabs, TabList } from "@chakra-ui/react";
+import { NavTab, LogOutTab } from "../NavTab";
+import { isCustomer, isManager } from "../../utils/Variables/index.jsx";
+import { logOut } from "../../utils/profile/logOut.js";
 
 export function NavDesktop() {
-  const handleLogoutClick = () => {
-    LogOut();
+  const handlelogOutClick = () => {
+    logOut();
   };
 
   const getNavComponent = () => {
@@ -16,7 +16,7 @@ export function NavDesktop() {
           <NavTab path="/" label="Venues" />
           <NavTab path="/CustomerBookings" label="Bookings" />
           <NavTab path="/Profile" label="Profile" />
-          <LogoutTab handleClick={handleLogoutClick} />
+          <LogOutTab handleClick={handlelogOutClick} />
         </>
       );
     }
@@ -25,7 +25,7 @@ export function NavDesktop() {
         <>
           <NavTab path="/ManagerVenues" label="Properties" />
           <NavTab path="/Profile" label="Profile" />
-          <LogoutTab handleClick={handleLogoutClick} />
+          <LogOutTab handleClick={handlelogOutClick} />
         </>
       );
     } else {

@@ -12,17 +12,17 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { FaBars } from "react-icons/fa";
-import { CheckUserRole } from "../../utils/profile/CheckUserRole";
-import { LogOut } from "../../utils/profile/LogOut";
+import { logOut } from "../../utils/profile/logOut.js";
 import { Link } from "react-router-dom";
+import { userRoles } from "../../hooks/userRoles.js";
 
 export function NavMobile() {
-  const { isManager, isCustomer } = CheckUserRole();
+  const { isManager, isCustomer } = userRoles();
   const [showDrawer, setShowDrawer] = useState(false);
   const isMobile = useBreakpointValue({ base: true, lg: false });
 
-  const handleLogoutClick = () => {
-    LogOut();
+  const handlelogOutClick = () => {
+    logOut();
   };
 
   const toggleDrawer = () => {
@@ -70,8 +70,8 @@ export function NavMobile() {
                   <Link to="/Profile" label="My Profile" onClick={closeDrawer}>
                     Profile
                   </Link>
-                  <Button variant={"second"} onClick={handleLogoutClick}>
-                    LogOut
+                  <Button variant={"second"} onClick={handlelogOutClick}>
+                    logOut
                   </Button>
                 </>
               )}
@@ -89,8 +89,8 @@ export function NavMobile() {
                     onClick={closeDrawer}>
                     Profile
                   </Link>
-                  <Button variant={"second"} onClick={handleLogoutClick}>
-                    Logout
+                  <Button variant={"second"} onClick={handlelogOutClick}>
+                    logOut
                   </Button>
                 </>
               )}

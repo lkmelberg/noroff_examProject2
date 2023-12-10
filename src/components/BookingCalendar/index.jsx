@@ -3,9 +3,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useParams } from "react-router-dom";
 import { Input, Button, Text, Flex } from "@chakra-ui/react";
-import { PostData } from "../../utils/api/Data";
-import ENDPOINTS from "../../utils/api/endpoints";
-import { isCustomer, token } from "../../utils/Variables";
+import { postData } from "../../hooks/api/data.js";
+import ENDPOINTS from "../../utils/endpoints.js";
+import { isCustomer, token } from "../../utils/Variables/index.jsx";
 
 export function BookingCalendar({ isLoading, isError, venue }) {
   const [disabledDates, setDisabledDates] = useState([]);
@@ -31,12 +31,12 @@ export function BookingCalendar({ isLoading, isError, venue }) {
         venueId: venue.id,
       };
 
-      const response = await PostData(
+      const response = await postData(
         `${ENDPOINTS.BOOKINGS}`,
         bookingData,
         token
       );
-      console.log("Booking created:", response);
+
       window.location.href = "/CustomerBookings";
     } catch (error) {
       console.error("Error creating booking:", error);

@@ -1,5 +1,5 @@
-import { DeleteData } from "../../utils/api/Data";
-import ENDPOINTS from "../../utils/api/endpoints";
+import { deleteData } from "../../hooks/api/data.js";
+import ENDPOINTS from "../../utils/endpoints.js";
 import { token } from "../../utils/Variables";
 
 export async function CardButtonAction({ id, action }) {
@@ -7,7 +7,7 @@ export async function CardButtonAction({ id, action }) {
     if (action === "view") {
       window.location.href = `/venues/${id}`;
     } else if (action === "delete") {
-      await DeleteData(`${ENDPOINTS.VENUES}/${id}`, token);
+      await deleteData(`${ENDPOINTS.VENUES}/${id}`, token);
     } else if (action === "edit") {
       window.location.href = `/UpdateVenue/${id}`;
     } else if (action === "ViewBookings") {

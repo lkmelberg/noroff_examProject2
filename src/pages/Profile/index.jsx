@@ -1,11 +1,10 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
-
-import { isManager, name } from "../../../utils/Variables";
-import { CustomerProfile } from "../CustomerProfile";
-import { ManagerProfile } from "../ManagerProfile";
-import { Avatar } from "../../../components/Avatar";
-import { EditAvatarButton } from "../../../components/EditAvatarButton";
+import { isManager, name } from "../../utils/Variables";
+import { CustomerProfile } from "../../components/render/profiles/CustomerProfile";
+import { ManagerProfile } from "../../components/render/profiles/ManagerProfile";
+import { Avatar } from "../../components/Avatar";
+import { EditAvatarButton } from "../../components/EditAvatarButton";
 
 export function Profile() {
   function redir() {

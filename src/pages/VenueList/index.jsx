@@ -1,14 +1,14 @@
 import React from "react";
-import { UseFetchedData } from "../../../utils/api/UseFetchedData";
-import ENDPOINTS from "../../../utils/api/endpoints";
-import { VenueListRender } from "../../../components/render/venue/VenueListRender";
+import { useFetchedData } from "../../hooks/api/useFetchedData.js";
+import ENDPOINTS from "../../utils/endpoints.js";
+import { VenueListRender } from "../../components/render/venue/VenueListRender/index.jsx";
 
 export function VenueList() {
   const {
     data: venues,
     isLoading,
     isError,
-  } = UseFetchedData(ENDPOINTS.VENUES_ALL);
+  } = useFetchedData(ENDPOINTS.VENUES_ALL);
 
   return (
     <>

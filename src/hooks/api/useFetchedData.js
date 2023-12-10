@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { FetchData } from "../Data";
+import { fetchData } from "./data";
 
-export function UseFetchedData(endpoint, accessToken = null) {
+export function useFetchedData(endpoint, accessToken = null) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getData = async () => {
       setIsError(false);
       setIsLoading(true);
 
       try {
-        const fetchedData = await FetchData(endpoint, "GET", {}, accessToken);
+        const fetchedData = await fetchData(endpoint, "GET", {}, accessToken);
 
         setData(fetchedData);
       } catch (error) {
@@ -23,7 +23,7 @@ export function UseFetchedData(endpoint, accessToken = null) {
       setIsLoading(false);
     };
 
-    fetchData();
+    getData();
   }, [endpoint, accessToken]);
 
   return { data, isLoading, isError };

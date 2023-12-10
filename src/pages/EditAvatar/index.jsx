@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Flex, Button, Text, Input } from "@chakra-ui/react";
-import { UpdateData } from "../../../utils/api/Data";
-import { Avatar } from "../../../components/Avatar";
-import ENDPOINTS from "../../../utils/api/endpoints";
-import { name, token } from "../../../utils/Variables";
+import { updateData } from "../../hooks/api/data.js";
+import { Avatar } from "../../components/Avatar/index.jsx";
+import ENDPOINTS from "../../utils/endpoints.js";
+import { name, token } from "../../utils/Variables/index.jsx";
 import * as yup from "yup";
 
 export function EditAvatar() {
@@ -34,7 +34,7 @@ export function EditAvatar() {
         avatar: avatarUrl,
       };
 
-      const response = await UpdateData(ENDPOINTS.AVATAR, body, token);
+      const response = await updateData(ENDPOINTS.AVATAR, body, token);
 
       setErrorMessage("");
       setResponseMessage("Avatar updated successfully, please wait");

@@ -17,7 +17,12 @@ export default function BookingListRender({
   }, [bookings]);
 
   return (
-    <Flex direction={"column"} marginTop={"1rem"} alignItems={"center"}>
+    <Flex
+      direction={"row"}
+      wrap={"wrap"}
+      gap={10}
+      marginTop={"1rem"}
+      justifyContent={"center"}>
       {isLoading ? (
         <p>Loading...</p>
       ) : isError ? (
