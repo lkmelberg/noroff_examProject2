@@ -1,5 +1,6 @@
 # Exam Project 2 - Holidaze - Noroff VOC
 
+
 This is my final exam project for my frontend degree from Noroff :) We were to use what we have learned in our two years of studies and apply it to the project. The site is a accomodation booking site. It was created using React and Chakra UI.
 
   <img src="/src/assets/preview.png"  />
@@ -67,6 +68,49 @@ If you would like to contribute, please create a new branch and create a pull re
 You can reach me here:
 
 [My LinkedIn page](https://www.linkedin.com/in/linn-melberg-5788a11b6/)
+
+
+## Built With
+
+- [React.js](https://reactjs.org/)
+- [Vite.js](https://vitejs.dev/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Yup Validation](https://github.com/jquense/yup)
+
+### Installing
+
+To open the repo on your local machine:
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com:lkmelberg/noroff_examProject2.git
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+### Running
+
+To run the app, run the following commands:
+
+```bash
+npm run dev
+```
+
+## Contributing
+
+If you would like to contribute, please create a new branch and create a pull request with your changes.
+
+## Contact
+
+You can reach me here:
+
+[My LinkedIn page](https://www.linkedin.com/in/linn-melberg-5788a11b6/)
+
 
 ## Project Brief / Description
 
@@ -169,3 +213,4 @@ Include the required links in the Moodle delivery window using this template for
 All final changes must be merged into the default branch main or master. Other branches will not be checked.
 
 Ensure that the readme.md file describes your project thoroughly, including how to setup and run the project locally and any special instructions for testers.
+
