@@ -27,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<VenueList />} />
-          <Route path="venues/:id" element={<Venue />} />
+          <Route path="Venues/:id" element={<Venue />} />
           <Route path="CreateVenue" element={<CreateVenue />} />
           <Route path="UpdateVenue/:id" element={<UpdateVenue />} />
           <Route path="ManagerVenues" element={<ManagerVenues />} />
