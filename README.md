@@ -1,6 +1,7 @@
 # Exam Project 2 - Holidaze - Noroff VOC
 
-This is my final exam project for my frontend degree from Noroff :) We were to use what we have learned in our two years of studies and apply it to the project. The site is a accomodation booking site. It was created with React and Chakra UI.
+
+This is my final exam project for my frontend degree from Noroff :) We were to use what we have learned in our two years of studies and apply it to the project. The site is a accomodation booking site. It was created using React and Chakra UI.
 
   <img src="/src/assets/preview.png"  />
 
@@ -8,22 +9,65 @@ This is my final exam project for my frontend degree from Noroff :) We were to u
 
 #### Hosted Site:
 
-<https://precious-custard-c580bd.netlify.app/>
+[Demo](https://precious-custard-c580bd.netlify.app/)
 
 #### Gantt Chart:
 
+[Trello Gantt](https://trello.com/b/S4ZHKzvC/melbergexamproject2/timeline)
+
 - select month or quarter for better view
 - each sprint has to do items
-  <https://trello.com/b/S4ZHKzvC/melbergexamproject2/timeline>
 
 #### Designs And Styleguide:
 
-<https://www.figma.com/file/dWhcG7aTMz25GFR9qSA2c1/ExamProject2---Holidaze?type=design&node-id=0%3A1&mode=design&t=EV1Ljrws6VRm1KUu-1>
+[Figma](https://www.figma.com/file/dWhcG7aTMz25GFR9qSA2c1/ExamProject2---Holidaze?type=design&node-id=0%3A1&mode=design&t=EV1Ljrws6VRm1KUu-1)
 
 #### Kanban Board:
 
+[Trello Kanban](https://trello.com/b/S4ZHKzvC/melbergexamproject2)
+
 - click on the sprints to see sprint tasks
-  <https://trello.com/b/S4ZHKzvC/melbergexamproject2>
+
+## Built With
+
+- [React.js](https://reactjs.org/)
+- [Vite.js](https://vitejs.dev/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Yup Validation](https://github.com/jquense/yup)
+
+### Installing
+
+To open the repo on your local machine:
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com:lkmelberg/noroff_examProject2.git
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+### Running
+
+To run the app, run the following commands:
+
+```bash
+npm run dev
+```
+
+## Contributing
+
+If you would like to contribute, please create a new branch and create a pull request with your changes.
+
+## Contact
+
+You can reach me here:
+
+[My LinkedIn page](https://www.linkedin.com/in/linn-melberg-5788a11b6/)
 
 
 ## Built With
