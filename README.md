@@ -1,6 +1,6 @@
 # Exam Project 2 - Holidaze - Noroff VOC
 
-This is my final exam project for my frontend degree from Noroff :) We were to use what we have learned in our two years of studies and apply it to the project. The site is a accomodation booking site. It must be created with a JS framework and CSS framework or styled components.
+This is my final exam project for my frontend degree from Noroff :) We were to use what we have learned in our two years of studies and apply it to the project. The site is a accomodation booking site. It was created with React and Chakra UI.
 
   <img src="/src/assets/preview.png"  />
 
