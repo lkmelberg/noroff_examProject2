@@ -146,7 +146,7 @@ git clone git@github.com:lkmelberg/noroff_examProject2.git
 
 2. Install the dependencies:
 
-```
+```bash
 npm install
 ```
 
