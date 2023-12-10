@@ -1,5 +1,4 @@
-import React from "react";
-export function LogOut() {
+export function logOut() {
   // Clear localStorage here
   localStorage.clear();
 

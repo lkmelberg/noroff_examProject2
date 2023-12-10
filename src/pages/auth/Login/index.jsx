@@ -1,7 +1,7 @@
 import React from "react";
 import AuthForm from "../../../components/AuthForm";
 import { YupSchemaLogin } from "../../../utils/YupSchema";
-import ENDPOINTS from "../../../utils/api/endpoints";
+import ENDPOINTS from "../../../utils/endpoints";
 
 export function Login() {
   const loginFields = {

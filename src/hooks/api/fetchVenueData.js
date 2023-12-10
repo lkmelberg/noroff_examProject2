@@ -1,6 +1,4 @@
-import React from "react";
-
-export function FetchVenueData(endpoint) {
+export function fetchVenueData(endpoint) {
   return fetch(endpoint)
     .then((response) => {
       if (!response.ok) {

@@ -62,7 +62,7 @@ User Stories - https://api.noroff.dev/docs/static/index.html
     A registered Venue manager may view bookings for a Venue they manage
     A registered user may login
     A registered user may update their avatar
-    A registered user may logout
+    A registered user may logOut
 
 ## Technical Restrictions
 

@@ -1,13 +1,13 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import { VenueForm } from "../../../components/VenueForm";
-import ENDPOINTS from "../../../utils/api/endpoints";
-import { PostData } from "../../../utils/api/Data";
+import ENDPOINTS from "../../../utils/endpoints.js";
+import { postData } from "../../../hooks/api/data.js";
 import { token } from "../../../utils/Variables";
 
 const handleSubmit = async (values) => {
   try {
-    const response = await PostData(ENDPOINTS.VENUES, values, token);
+    const response = await postData(ENDPOINTS.VENUES, values, token);
   } catch (error) {
     console.log("error");
   }

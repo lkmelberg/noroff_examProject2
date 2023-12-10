@@ -1,6 +1,6 @@
 import React from "react";
-import { UseFetchedData } from "../../../utils/api/UseFetchedData";
-import ENDPOINTS from "../../../utils/api/endpoints";
+import { useFetchedData } from "../../../hooks/api/useFetchedData.js";
+import ENDPOINTS from "../../../utils/endpoints.js";
 import { VenueListRender } from "../../../components/render/venue/VenueListRender";
 
 export function VenueList() {
@@ -8,7 +8,7 @@ export function VenueList() {
     data: venues,
     isLoading,
     isError,
-  } = UseFetchedData(ENDPOINTS.VENUES_ALL);
+  } = useFetchedData(ENDPOINTS.VENUES_ALL);
 
   return (
     <>

@@ -1,8 +1,6 @@
-import React from "react";
-
-export function CheckUserRole() {
+export function userRoles() {
   const accessToken = localStorage.getItem("accessToken");
-  const venueManager = localStorage.getItem("isManager");
+  const venueManager = localStorage.getItem("venueManager");
 
   let isCustomer = false;
   let isManager = false;

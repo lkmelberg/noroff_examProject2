@@ -1,4 +1,4 @@
-export async function FetchData(
+export async function fetchData(
   endpoint,
   method = "GET",
   data = {},
@@ -33,9 +33,9 @@ export async function FetchData(
   }
 }
 
-export async function PostData(endpoint, data, accessToken) {
+export async function postData(endpoint, data, accessToken) {
   try {
-    const response = await FetchData(endpoint, "POST", data, accessToken);
+    const response = await fetchData(endpoint, "POST", data, accessToken);
 
     return response;
   } catch (error) {
@@ -44,9 +44,9 @@ export async function PostData(endpoint, data, accessToken) {
   }
 }
 
-export async function UpdateData(endpoint, data, accessToken) {
+export async function updateData(endpoint, data, accessToken) {
   try {
-    const response = await FetchData(endpoint, "PUT", data, accessToken);
+    const response = await fetchData(endpoint, "PUT", data, accessToken);
 
     return response;
   } catch (error) {
@@ -55,9 +55,9 @@ export async function UpdateData(endpoint, data, accessToken) {
   }
 }
 
-export async function DeleteData(endpoint, accessToken) {
+export async function deleteData(endpoint, accessToken) {
   try {
-    const response = await FetchData(endpoint, "DELETE", null, accessToken);
+    const response = await fetchData(endpoint, "DELETE", null, accessToken);
 
     window.location.reload();
     return response;

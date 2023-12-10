@@ -4,9 +4,9 @@ import { Layout } from "./components/Layout";
 import { Error } from "./pages/Error";
 
 // venue
-import { VenueList } from "./pages/Venues/VenueList";
+import { VenueList } from "./pages/venues/VenueList";
 import { Venue } from "./pages/Venues/Venue";
-import { CreateVenue } from "./pages/Venues/CreateVenue";
+import { CreateVenue } from "./pages/venues/CreateVenue";
 import { UpdateVenue } from "./pages/UpdateVenue";
 import { ManagerVenues } from "./pages/ManagerVenues";
 

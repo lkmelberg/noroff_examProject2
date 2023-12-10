@@ -10,10 +10,10 @@ export function NavTab({ path, label }) {
   );
 }
 
-export function LogoutTab({ handleClick }) {
+export function LogOutTab({ handleClick }) {
   return (
     <Tab color="brand.lightBrick" onClick={handleClick}>
-      <span>Logout</span>
+      <span>logout</span>
     </Tab>
   );
 }

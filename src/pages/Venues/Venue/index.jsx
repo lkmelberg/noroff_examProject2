@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { UseFetchedData } from "../../../utils/api/UseFetchedData";
-import ENDPOINTS from "../../../utils/api/endpoints";
+import { useFetchedData } from "../../../hooks/api/useFetchedData.js";
+import ENDPOINTS from "../../../utils/endpoints.js";
 import { VenueRender } from "../../../components/render/venue/VenueRender";
 import { BookingCalendar } from "../../../components/BookingCalendar";
 
@@ -11,7 +11,7 @@ export function Venue() {
     data: venue,
     isLoading,
     isError,
-  } = UseFetchedData(`${ENDPOINTS.VENUES}/${id}?_bookings=true`);
+  } = useFetchedData(`${ENDPOINTS.VENUES}/${id}?_bookings=true`);
 
   return (
     <div>

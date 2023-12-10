@@ -1,12 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { UpdateData } from "../../utils/api/Data";
+import { updateData } from "../../hooks/api/data.js";
 import { VenueForm } from "../../components/VenueForm";
-import ENDPOINTS from "../../utils/api/endpoints";
+import ENDPOINTS from "../../utils/endpoints.js";
 import { Flex, Text } from "@chakra-ui/react";
 import { token } from "../../utils/Variables";
-import { FetchInitialValues } from "../../components/FetchInitialValues";
+import { fetchInitialValues } from "../../hooks/api/fetchInitialValues.js";
 
 export function UpdateVenue() {
   let { id } = useParams();
@@ -16,7 +16,7 @@ export function UpdateVenue() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const fetchedValues = await FetchInitialValues(id);
+        const fetchedValues = await fetchInitialValues(id);
         setInitialValues(fetchedValues);
       } catch (error) {
         // Handle error fetching initial values
@@ -31,7 +31,7 @@ export function UpdateVenue() {
 
   const handleSubmit = async (values) => {
     try {
-      const response = await UpdateData(updateEndpoint, values, token);
+      const response = await updateData(updateEndpoint, values, token);
     } catch (error) {
       console.log("error");
     }

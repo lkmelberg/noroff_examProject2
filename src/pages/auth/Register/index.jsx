@@ -1,6 +1,6 @@
 import React from "react";
 import AuthForm from "../../../components/AuthForm";
-import ENDPOINTS from "../../../utils/api/endpoints";
+import ENDPOINTS from "../../../utils/endpoints.js";
 import { YupSchemaRegister } from "../../../utils/YupSchema";
 
 export function Register() {
