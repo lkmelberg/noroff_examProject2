@@ -1,7 +1,7 @@
 import React from "react";
-import { useFetchedData } from "../../../hooks/api/useFetchedData.js";
-import ENDPOINTS from "../../../utils/endpoints.js";
-import { VenueListRender } from "../../../components/render/venue/VenueListRender";
+import { useFetchedData } from "../../hooks/api/useFetchedData.js";
+import ENDPOINTS from "../../utils/endpoints.js";
+import { VenueListRender } from "../../components/render/venue/VenueListRender/index.jsx";
 
 export function VenueList() {
   const {

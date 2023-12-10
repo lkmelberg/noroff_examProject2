@@ -1,9 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useFetchedData } from "../../../hooks/api/useFetchedData.js";
-import ENDPOINTS from "../../../utils/endpoints.js";
-import { VenueRender } from "../../../components/render/venue/VenueRender";
-import { BookingCalendar } from "../../../components/BookingCalendar";
+import { useFetchedData } from "../../hooks/api/useFetchedData.js";
+import ENDPOINTS from "../../utils/endpoints.js";
+import { VenueRender } from "../../components/render/venue/VenueRender/index.jsx";
+
+import { BookingCalendar } from "../../components/BookingCalendar/index.jsx";
 
 export function Venue() {
   let { id } = useParams();

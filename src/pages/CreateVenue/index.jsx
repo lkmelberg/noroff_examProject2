@@ -1,9 +1,9 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
-import { VenueForm } from "../../../components/VenueForm";
-import ENDPOINTS from "../../../utils/endpoints.js";
-import { postData } from "../../../hooks/api/data.js";
-import { token } from "../../../utils/Variables";
+import { VenueForm } from "../../components/VenueForm/index.jsx";
+import ENDPOINTS from "../../utils/endpoints.js";
+import { postData } from "../../hooks/api/data.js";
+import { token } from "../../utils/Variables/index.jsx";
 
 const handleSubmit = async (values) => {
   try {

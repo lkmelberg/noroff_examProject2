@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Flex, Button, Text, Input } from "@chakra-ui/react";
-import { updateData } from "../../../hooks/api/data.js";
-import { Avatar } from "../../../components/Avatar";
-import ENDPOINTS from "../../../utils/endpoints.js";
-import { name, token } from "../../../utils/Variables";
+import { updateData } from "../../hooks/api/data.js";
+import { Avatar } from "../../components/Avatar/index.jsx";
+import ENDPOINTS from "../../utils/endpoints.js";
+import { name, token } from "../../utils/Variables/index.jsx";
 import * as yup from "yup";
 
 export function EditAvatar() {
